@@ -112,6 +112,12 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:9.0.0'
     implementation 'com.google.maps.android:android-maps-utils:0.5+'
 
+
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+
+    implementation ('io.nlopez.smartlocation:library:3.3.3') {
+        transitive = false
+    }
 }
 repositories {
     mavenCentral()

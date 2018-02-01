@@ -7,10 +7,9 @@ public class Constants {
 
     public static final String PREF_FILE_NAME = "thoughtworks_pref_file";
 
+    public static final String CHENNAI_WARD_INFO_DETAILS = "chennaiwardinfo.txt";
 
-    public static final String CATEGORY_OFFLINE_FILE = "productcategory.txt";
     public static final String DATABASE_NAME =  "thoughtworks_db";
-
 
     public static final int SPLASH_TIME_OUT = 2000;
 

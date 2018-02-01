@@ -1,13 +1,8 @@
 package com.thoughtworks.whatyourward.features.splash;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-
 import com.thoughtworks.whatyourward.data.DataManager;
 import com.thoughtworks.whatyourward.features.base.BasePresenter;
 import com.thoughtworks.whatyourward.injection.ConfigPersistent;
-import com.thoughtworks.whatyourward.interfaces.OnCategorySuccess;
 
 import javax.inject.Inject;
 

@@ -1,10 +1,10 @@
 package com.thoughtworks.whatyourward.injection.component;
 
 import com.thoughtworks.whatyourward.data.DataManager;
-import com.thoughtworks.whatyourward.features.maps.HomeActivity;
-import com.thoughtworks.whatyourward.features.maps.HomeActivity_MembersInjector;
-import com.thoughtworks.whatyourward.features.maps.HomePresenter;
-import com.thoughtworks.whatyourward.features.maps.HomePresenter_Factory;
+import com.thoughtworks.whatyourward.features.home.HomeActivity;
+import com.thoughtworks.whatyourward.features.home.HomeActivity_MembersInjector;
+import com.thoughtworks.whatyourward.features.home.HomePresenter;
+import com.thoughtworks.whatyourward.features.home.HomePresenter_Factory;
 import com.thoughtworks.whatyourward.features.splash.SplashScreenActivity;
 import com.thoughtworks.whatyourward.features.splash.SplashScreenActivity_MembersInjector;
 import com.thoughtworks.whatyourward.features.splash.SplashScreenPresenter;

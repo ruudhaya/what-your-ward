@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import com.thoughtworks.whatyourward.Constants;
 import com.thoughtworks.whatyourward.R;
 import com.thoughtworks.whatyourward.features.base.BaseActivity;
-import com.thoughtworks.whatyourward.features.maps.HomeActivity;
+import com.thoughtworks.whatyourward.features.home.HomeActivity;
 import com.thoughtworks.whatyourward.injection.component.ActivityComponent;
 import com.thoughtworks.whatyourward.util.ImageUtil;
 
@@ -40,7 +40,7 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
 
     @Override
     public int getLayout() {
-        return R.layout.activity_home;
+        return R.layout.activity_splash;
     }
 
     @Override

@@ -1,18 +1,18 @@
 package com.thoughtworks.whatyourward.data;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
 
 import com.github.polok.localify.LocalifyClient;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.whatyourward.Constants;
 import com.thoughtworks.whatyourward.data.local.PreferencesHelper;
-import com.thoughtworks.whatyourward.data.model.response.CategoryResponse;
+import com.thoughtworks.whatyourward.data.model.ward.Ward;
 import com.thoughtworks.whatyourward.injection.ApplicationContext;
-import com.thoughtworks.whatyourward.interfaces.OnCategorySuccess;
-import com.thoughtworks.whatyourward.util.Util;
+import com.thoughtworks.whatyourward.interfaces.OnWardSuccess;
+
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -49,21 +49,23 @@ public class DataManager {
 
 
 
-    public void loadCategory(OnCategorySuccess onCategorySuccess){
+    public void loadWard(OnWardSuccess onWardSuccess){
 
         localifyClient.localify()
                 .rx()
-                .loadAssetsFile(Constants.CATEGORY_OFFLINE_FILE)
+                .loadAssetsFile(Constants.CHENNAI_WARD_INFO_DETAILS)
                 .subscribeOn(Schedulers.io())
-                .map(new Func1<String, CategoryResponse>() {
+                .map(new Func1<String, ArrayList<Ward>>() {
                     @Override
-                    public CategoryResponse call(String data) {
+                    public ArrayList<Ward> call(String data) {
+
                         Gson gson = new GsonBuilder().create();
-                        return gson.fromJson(data, CategoryResponse.class);
+                        return gson.fromJson(data,  new TypeToken<ArrayList<Ward>>(){}.getType());
                     }
-                }).subscribe(new Subscriber<CategoryResponse>() {
+                }).subscribe(new Subscriber<ArrayList<Ward>>() {
             @Override
             public void onCompleted() {
+
             }
 
             @Override
@@ -71,9 +73,9 @@ public class DataManager {
             }
 
             @Override
-            public void onNext(CategoryResponse categoryResponse) {
+            public void onNext(ArrayList<Ward> categoryResponse) {
 
-                onCategorySuccess.onCategorySuccess(categoryResponse);
+                onWardSuccess.onWardList(categoryResponse);
 
             }
         });
