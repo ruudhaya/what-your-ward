@@ -1,0 +1,245 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
+MERGED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
+MERGED from [io.realm:realm-android-library:4.1.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/realm-android-library-4.1.0.aar/df50424bd91c14182ca3379ff2fa3730/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.0.aar/b3386d04a031a7f3c4e3fbd48312c5a9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/design-27.0.0.aar/2b651f53aff38f1980bc022ed9838100/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.polok.localify:localify:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/localify-1.0.0.aar/9b1f140c1130f9c2451e9be05b11dfcc/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/220e080ee73ce778b1dc31d357d9ffa0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.0.aar/62493ddcedcb20ca46ea830b47e2ff6b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/6b2f87eefd394327f8af5e78ba227bb4/AndroidManifest.xml:2:1-7:12
+MERGED from [com.android.support:transition:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/transition-27.0.0.aar/16b5c013de3cfd14a7bcd4e099f56ea8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:gridlayout-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/gridlayout-v7-27.0.0.aar/aa96fbc3fd01d5566ad7e09e4188126e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.0.0.aar/ccacecaeab6a6bf689143793b12f0f96/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-v4:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/1fca1ec38b1fbf940f5a2ec3d56f93e3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/96d40faa6c827dfa44527320b9762492/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.0.aar/66dca6848c9e2032d1377629fb356b4c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.0.aar/525b29ff96fa621a1b4f56f265ff1b3c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.0.aar/356aea2d6ba0f229a3276555b04bf2fb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.0.aar/e41fadecb06f9744889e04b50a2392f5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.0.aar/4dde2d62e64016c99ceee559c489261a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/7e669e56b02fe633dfa9af26e6341abc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton.timber:timber:4.5.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/timber-4.5.1.aar/18dac9f8b0eefa197051db52b7c957ba/AndroidManifest.xml:2:1-10:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e9a8afebd0258c691162b6c76c8e7f9a/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:2:1-13:12
+MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/relinker-1.2.2.aar/99ae758770815a2641019fa84a6e9871/AndroidManifest.xml:2:1-9:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:17:1-30:12
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:2:1-9:12
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:2:1-9:12
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:2:1-9:12
+	package
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:3:5-44
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:21:5-66
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:8:22-78
+application
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:9:5-45:19
+MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.0.0.aar/ccacecaeab6a6bf689143793b12f0f96/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.0.0.aar/ccacecaeab6a6bf689143793b12f0f96/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:20:5-24:19
+MERGED from [com.jakewharton.timber:timber:4.5.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/timber-4.5.1.aar/18dac9f8b0eefa197051db52b7c957ba/AndroidManifest.xml:8:5-20
+MERGED from [com.jakewharton.timber:timber:4.5.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/timber-4.5.1.aar/18dac9f8b0eefa197051db52b7c957ba/AndroidManifest.xml:8:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e9a8afebd0258c691162b6c76c8e7f9a/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e9a8afebd0258c691162b6c76c8e7f9a/AndroidManifest.xml:9:5-20
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:7:5-11:19
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:7:5-11:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:13:9-41
+	android:icon
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:15:9-40
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:10:9-48
+activity#com.thoughtworks.whatyourward.features.splash.SplashScreenActivity
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:18:9-27:20
+	android:label
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:20:13-45
+	android:theme
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:21:13-67
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:19:13-65
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:22:13-26:29
+action#android.intent.action.MAIN
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:23:17-69
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:23:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:25:17-77
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:25:27-74
+activity#com.thoughtworks.whatyourward.features.maps.MapsActivity
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:31:9-35:20
+	android:label
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:33:13-45
+	android:theme
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:34:13-56
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:32:13-55
+meta-data#com.google.android.geo.API_KEY
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:38:9-40:55
+	android:value
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:40:13-52
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:39:13-58
+uses-sdk
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml
+MERGED from [io.realm:realm-android-library:4.1.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/realm-android-library-4.1.0.aar/df50424bd91c14182ca3379ff2fa3730/AndroidManifest.xml:7:5-9:41
+MERGED from [io.realm:realm-android-library:4.1.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/realm-android-library-4.1.0.aar/df50424bd91c14182ca3379ff2fa3730/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:cardview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.0.aar/b3386d04a031a7f3c4e3fbd48312c5a9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.0.aar/b3386d04a031a7f3c4e3fbd48312c5a9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/design-27.0.0.aar/2b651f53aff38f1980bc022ed9838100/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/design-27.0.0.aar/2b651f53aff38f1980bc022ed9838100/AndroidManifest.xml:20:5-44
+MERGED from [com.github.polok.localify:localify:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/localify-1.0.0.aar/9b1f140c1130f9c2451e9be05b11dfcc/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.polok.localify:localify:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/localify-1.0.0.aar/9b1f140c1130f9c2451e9be05b11dfcc/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/220e080ee73ce778b1dc31d357d9ffa0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/220e080ee73ce778b1dc31d357d9ffa0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.0.aar/62493ddcedcb20ca46ea830b47e2ff6b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.0.aar/62493ddcedcb20ca46ea830b47e2ff6b/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/6b2f87eefd394327f8af5e78ba227bb4/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/6b2f87eefd394327f8af5e78ba227bb4/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:transition:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/transition-27.0.0.aar/16b5c013de3cfd14a7bcd4e099f56ea8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/transition-27.0.0.aar/16b5c013de3cfd14a7bcd4e099f56ea8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:gridlayout-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/gridlayout-v7-27.0.0.aar/aa96fbc3fd01d5566ad7e09e4188126e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:gridlayout-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/gridlayout-v7-27.0.0.aar/aa96fbc3fd01d5566ad7e09e4188126e/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.0.0.aar/ccacecaeab6a6bf689143793b12f0f96/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.0.0.aar/ccacecaeab6a6bf689143793b12f0f96/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/1fca1ec38b1fbf940f5a2ec3d56f93e3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.0.aar/1fca1ec38b1fbf940f5a2ec3d56f93e3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/96d40faa6c827dfa44527320b9762492/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.0.aar/96d40faa6c827dfa44527320b9762492/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.0.aar/66dca6848c9e2032d1377629fb356b4c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.0.aar/66dca6848c9e2032d1377629fb356b4c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.0.aar/525b29ff96fa621a1b4f56f265ff1b3c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.0.aar/525b29ff96fa621a1b4f56f265ff1b3c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.0.aar/356aea2d6ba0f229a3276555b04bf2fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.0.aar/356aea2d6ba0f229a3276555b04bf2fb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.0.aar/e41fadecb06f9744889e04b50a2392f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.0.aar/e41fadecb06f9744889e04b50a2392f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.0.aar/4dde2d62e64016c99ceee559c489261a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.0.aar/4dde2d62e64016c99ceee559c489261a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/7e669e56b02fe633dfa9af26e6341abc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.0.aar/7e669e56b02fe633dfa9af26e6341abc/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton.timber:timber:4.5.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/timber-4.5.1.aar/18dac9f8b0eefa197051db52b7c957ba/AndroidManifest.xml:6:5-43
+MERGED from [com.jakewharton.timber:timber:4.5.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/timber-4.5.1.aar/18dac9f8b0eefa197051db52b7c957ba/AndroidManifest.xml:6:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e9a8afebd0258c691162b6c76c8e7f9a/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e9a8afebd0258c691162b6c76c8e7f9a/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:5:5-43
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:5:5-43
+MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/relinker-1.2.2.aar/99ae758770815a2641019fa84a6e9871/AndroidManifest.xml:7:5-43
+MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/relinker-1.2.2.aar/99ae758770815a2641019fa84a6e9871/AndroidManifest.xml:7:5-43
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.DISABLE_KEYGUARD
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:6:5-75
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:6:22-72
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:7:5-68
+	android:name
+		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:7:22-65
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:20:5-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:20:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:22:5-24:33
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:23:8-40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:24:8-31
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:20:19-85
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:7:9-11:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:8:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:10:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:11:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/firebase-common-9.0.0.aar/56fd7b43de38461bb7722d2a686f9899/AndroidManifest.xml:9:13-58
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:8:9-10:69
+MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:8:9-10:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:22:13-58
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:26:13-58

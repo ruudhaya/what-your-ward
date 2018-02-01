@@ -1,0 +1,4 @@
+#Thu Feb 01 16:01:32 IST 2018
+base.0=/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/transforms/dexMerger/debug/9
+renamed.0=classes.dex
+file.0=/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/transforms/dexMerger/debug/9/classes.dex
