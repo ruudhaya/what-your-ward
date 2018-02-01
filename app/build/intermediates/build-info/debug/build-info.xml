@@ -2,43 +2,82 @@
 <instant-run
     abi="x86"
     api-level="23"
-    build-mode="COLD"
+    build-mode="FULL"
     density="420dpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1517481139001"
+    timestamp="1517482347861"
     token="3057384587665019597"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="3172" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="93" />
     <task
         name="verifier"
-        duration="0" />
+        duration="32" />
 
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
     <artifact
         location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/outputs/apk/debug/app-debug.apk"
         type="SPLIT_MAIN" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1517476474299"
+        timestamp="1517482347861"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/outputs/apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+        <artifact
+            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -47,40 +86,13 @@
             location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
             location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/outputs/apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1517481079574"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
             location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
@@ -88,26 +100,6 @@
         <artifact
             location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1517481139001"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/outputs/apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

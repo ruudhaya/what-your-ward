@@ -3,21 +3,18 @@ package com.thoughtworks.whatyourward.features.splash;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 
 import com.thoughtworks.whatyourward.Constants;
 import com.thoughtworks.whatyourward.R;
 import com.thoughtworks.whatyourward.features.base.BaseActivity;
-import com.thoughtworks.whatyourward.features.maps.MapsActivity;
+import com.thoughtworks.whatyourward.features.maps.HomeActivity;
 import com.thoughtworks.whatyourward.injection.component.ActivityComponent;
 import com.thoughtworks.whatyourward.util.ImageUtil;
-import com.thoughtworks.whatyourward.util.Util;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Created by udhayakumarulaganathan on 03/01/18.
@@ -37,14 +34,13 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         splashScreenPresenter.onViewReady();
 
     }
 
     @Override
     public int getLayout() {
-        return R.layout.activity_splash;
+        return R.layout.activity_home;
     }
 
     @Override
@@ -70,7 +66,7 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
             @Override
             public void run() {
 
-                startActivity(new Intent(SplashScreenActivity.this, MapsActivity.class));
+                startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
 
             }
         }, Constants.SPLASH_TIME_OUT);

@@ -2,6 +2,7 @@ package com.thoughtworks.whatyourward.injection.component;
 
 import dagger.Subcomponent;
 
+import com.thoughtworks.whatyourward.features.maps.HomeActivity;
 import com.thoughtworks.whatyourward.features.splash.SplashScreenActivity;
 import com.thoughtworks.whatyourward.injection.PerActivity;
 import com.thoughtworks.whatyourward.injection.module.ActivityModule;
@@ -12,5 +13,6 @@ public interface ActivityComponent {
 
     void inject(SplashScreenActivity splashScreenActivity);
 
+    void inject(HomeActivity homeActivity);
 
 }

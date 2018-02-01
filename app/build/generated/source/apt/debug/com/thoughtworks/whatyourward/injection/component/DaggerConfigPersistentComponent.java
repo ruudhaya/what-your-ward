@@ -1,6 +1,10 @@
 package com.thoughtworks.whatyourward.injection.component;
 
 import com.thoughtworks.whatyourward.data.DataManager;
+import com.thoughtworks.whatyourward.features.maps.HomeActivity;
+import com.thoughtworks.whatyourward.features.maps.HomeActivity_MembersInjector;
+import com.thoughtworks.whatyourward.features.maps.HomePresenter;
+import com.thoughtworks.whatyourward.features.maps.HomePresenter_Factory;
 import com.thoughtworks.whatyourward.features.splash.SplashScreenActivity;
 import com.thoughtworks.whatyourward.features.splash.SplashScreenActivity_MembersInjector;
 import com.thoughtworks.whatyourward.features.splash.SplashScreenPresenter;
@@ -21,6 +25,8 @@ public final class DaggerConfigPersistentComponent implements ConfigPersistentCo
 
   private Provider<SplashScreenPresenter> splashScreenPresenterProvider;
 
+  private Provider<HomePresenter> homePresenterProvider;
+
   private DaggerConfigPersistentComponent(Builder builder) {
     initialize(builder);
   }
@@ -36,6 +42,8 @@ public final class DaggerConfigPersistentComponent implements ConfigPersistentCo
             builder.appComponent);
     this.splashScreenPresenterProvider =
         DoubleCheck.provider(SplashScreenPresenter_Factory.create(dataManagerProvider));
+    this.homePresenterProvider =
+        DoubleCheck.provider(HomePresenter_Factory.create(dataManagerProvider));
   }
 
   @Override
@@ -94,9 +102,20 @@ public final class DaggerConfigPersistentComponent implements ConfigPersistentCo
       injectSplashScreenActivity(splashScreenActivity);
     }
 
+    @Override
+    public void inject(HomeActivity homeActivity) {
+      injectHomeActivity(homeActivity);
+    }
+
     private SplashScreenActivity injectSplashScreenActivity(SplashScreenActivity instance) {
       SplashScreenActivity_MembersInjector.injectSplashScreenPresenter(
           instance, DaggerConfigPersistentComponent.this.splashScreenPresenterProvider.get());
+      return instance;
+    }
+
+    private HomeActivity injectHomeActivity(HomeActivity instance) {
+      HomeActivity_MembersInjector.injectHomePresenter(
+          instance, DaggerConfigPersistentComponent.this.homePresenterProvider.get());
       return instance;
     }
   }

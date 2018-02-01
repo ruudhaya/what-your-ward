@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.thoughtworks.whatyourward.features.maps.MapsActivity"
+            android:name="com.thoughtworks.whatyourward.features.maps.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>

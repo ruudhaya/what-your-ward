@@ -4171,10 +4171,10 @@ public final class R {
     public static final int abc_search_view=0x7f0a0018;
     public static final int abc_select_dialog_material=0x7f0a0019;
     public static final int activity_cart_list=0x7f0a001a;
-    public static final int activity_maps=0x7f0a001b;
-    public static final int activity_product_details=0x7f0a001c;
-    public static final int activity_product_list=0x7f0a001d;
-    public static final int activity_splash=0x7f0a001e;
+    public static final int activity_home=0x7f0a001b;
+    public static final int activity_maps=0x7f0a001c;
+    public static final int activity_product_details=0x7f0a001d;
+    public static final int activity_product_list=0x7f0a001e;
     public static final int amu_info_window=0x7f0a001f;
     public static final int amu_text_bubble=0x7f0a0020;
     public static final int amu_webview=0x7f0a0021;

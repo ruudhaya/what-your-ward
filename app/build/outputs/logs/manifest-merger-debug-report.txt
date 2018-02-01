@@ -113,7 +113,7 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:25:17-77
 	android:name
 		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:25:27-74
-activity#com.thoughtworks.whatyourward.features.maps.MapsActivity
+activity#com.thoughtworks.whatyourward.features.maps.HomeActivity
 ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:31:9-35:20
 	android:label
 		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:33:13-45
