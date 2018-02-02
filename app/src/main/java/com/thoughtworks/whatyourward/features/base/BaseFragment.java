@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import java.util.concurrent.atomic.AtomicLong;
 
 import butterknife.ButterKnife;
-import com.thoughtworks.whatyourward.ThoughtworksApplication;
+import com.thoughtworks.whatyourward.WhatYourWardApplication;
 import com.thoughtworks.whatyourward.injection.component.ConfigPersistentComponent;
 import com.thoughtworks.whatyourward.injection.component.DaggerConfigPersistentComponent;
 import com.thoughtworks.whatyourward.injection.component.FragmentComponent;
@@ -46,7 +46,7 @@ public abstract class BaseFragment extends Fragment {
             Timber.i("Creating new ConfigPersistentComponent id=%d", fragmentId);
             configPersistentComponent =
                     DaggerConfigPersistentComponent.builder()
-                            .appComponent(ThoughtworksApplication.get(getActivity()).getComponent())
+                            .appComponent(WhatYourWardApplication.get(getActivity()).getComponent())
                             .build();
             componentsArray.put(fragmentId, configPersistentComponent);
         } else {

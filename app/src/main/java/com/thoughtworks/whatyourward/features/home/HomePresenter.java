@@ -59,4 +59,22 @@ public class HomePresenter extends BasePresenter<HomeView> {
         });
     }
 
+    public void startAnimation(){
+
+        getView().showAnimation();
+    }
+
+
+    public void stopAnimation(){
+
+        getView().hideAnimation();
+
+    }
+
+
+//    public void stopAnimationAndFinish(){
+//
+//        getView().hideAnimationAndFinish();
+//
+//    }
 }

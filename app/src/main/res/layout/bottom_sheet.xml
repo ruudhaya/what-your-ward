@@ -70,7 +70,7 @@
                 android:text="OFFICER MOBILE: 9445678765"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </LinearLayout>
 
 
@@ -123,17 +123,27 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/txt_ward_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="5dp"
+                android:text="EMAIL: ward182@chennaicorporation.gov.in"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/txt_ward_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:lineSpacingExtra="5dp"
                 android:text="CONTACT: 9445678765"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </LinearLayout>
 
 
@@ -160,7 +170,7 @@
                 android:gravity="center"
                 android:text="JOIN WARD GROUP"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"/>
         </LinearLayout>
 
     </LinearLayout>

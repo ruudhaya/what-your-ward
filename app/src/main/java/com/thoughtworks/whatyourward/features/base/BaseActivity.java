@@ -1,5 +1,6 @@
 package com.thoughtworks.whatyourward.features.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.util.LongSparseArray;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +10,13 @@ import android.view.MenuItem;
 import java.util.concurrent.atomic.AtomicLong;
 
 import butterknife.ButterKnife;
-import com.thoughtworks.whatyourward.ThoughtworksApplication;
+import com.thoughtworks.whatyourward.WhatYourWardApplication;
 import com.thoughtworks.whatyourward.injection.component.ActivityComponent;
 import com.thoughtworks.whatyourward.injection.component.ConfigPersistentComponent;
 import com.thoughtworks.whatyourward.injection.component.DaggerConfigPersistentComponent;
 import com.thoughtworks.whatyourward.injection.module.ActivityModule;
 import timber.log.Timber;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Abstract activity that every other Activity in this application must implement. It provides the
@@ -49,7 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             Timber.i("Creating new ConfigPersistentComponent id=%d", activityId);
             configPersistentComponent =
                     DaggerConfigPersistentComponent.builder()
-                            .appComponent(ThoughtworksApplication.get(this).getComponent())
+                            .appComponent(WhatYourWardApplication.get(this).getComponent())
                             .build();
             componentsArray.put(activityId, configPersistentComponent);
         } else {
@@ -79,6 +81,12 @@ public abstract class BaseActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override

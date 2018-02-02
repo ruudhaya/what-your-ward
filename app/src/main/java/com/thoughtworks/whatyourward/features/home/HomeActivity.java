@@ -1,11 +1,15 @@
 package com.thoughtworks.whatyourward.features.home;
 
 import android.Manifest;
+import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetDialog;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +29,7 @@ import com.thoughtworks.whatyourward.data.model.ward.Ward;
 import com.thoughtworks.whatyourward.data.model.ward.ZoneInfo;
 import com.thoughtworks.whatyourward.features.base.BaseActivity;
 import com.thoughtworks.whatyourward.injection.component.ActivityComponent;
+import com.thoughtworks.whatyourward.util.IntentUtil;
 import com.thoughtworks.whatyourward.util.KmlUtil;
 import com.thoughtworks.whatyourward.util.ParseUtil;
 
@@ -54,6 +59,16 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     @BindView(R.id.btn_next)
     Button btnNext;
+    @BindView(R.id.img_loading)
+    ImageView imgLoading;
+    @BindView(R.id.img_map_marker)
+    ImageView imgMapMarker;
+
+    @BindView(R.id.view_loading)
+    LinearLayout viewLoading;
+
+    @BindView(R.id.ll_footer)
+    LinearLayout llFooter;
 
     private KmlLayer kmlLayer;
 
@@ -68,6 +83,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     private CompositeDisposable disposable;
     private GoogleMap mGoogleMap;
     private ArrayList<Ward> mWardArrayList;
+    private AnimationDrawable loadingAnimationDrawable;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +135,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
             kmlLayer.addLayerToMap();
 
             Timber.i("Kml loaded");
+            homePresenter.stopAnimation();
 
         } catch (XmlPullParserException | IOException e) {
             e.printStackTrace();
@@ -154,6 +172,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
         requestLocationPermission();
 
+        homePresenter.startAnimation();
+
         homePresenter.loadWard();
     }
 
@@ -177,8 +197,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
                         disposable.add(
                                 rxLocation.settings().checkAndHandleResolution(locationRequest)
-                                        .subscribeOn(Schedulers.io())
-                                        .observeOn(AndroidSchedulers.mainThread())
+//                                        .subscribeOn(Schedulers.io())
+//                                        .observeOn(AndroidSchedulers.mainThread())
                                         .subscribe(success -> {
 
                                             Timber.i("Location enabled success");
@@ -209,6 +229,39 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     }
 
+    @Override
+    public void showAnimation() {
+
+        viewLoading.setVisibility(View.VISIBLE);
+        imgMapMarker.setVisibility(View.GONE);
+        llFooter.setVisibility(View.GONE);
+
+         loadingAnimationDrawable
+                = (AnimationDrawable)imgLoading.getDrawable();
+
+        imgLoading.post(
+                new Runnable(){
+
+                    @Override
+                    public void run() {
+                        loadingAnimationDrawable.start();
+                    }
+                });
+
+
+    }
+
+    @Override
+    public void hideAnimation() {
+
+        loadingAnimationDrawable.stop();
+
+        viewLoading.setVisibility(View.GONE);
+        llFooter.setVisibility(View.VISIBLE);
+
+        imgMapMarker.setVisibility(View.VISIBLE);
+    }
+
     @OnClick(R.id.btn_next)
     public void onClick(View v) {
         switch (v.getId()) {
@@ -231,7 +284,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 TextView txtWardAddress = view.findViewById(R.id.txt_ward_address);
                 TextView txtWardId = view.findViewById(R.id.txt_ward_id);
                 TextView txtWardMobile = view.findViewById(R.id.txt_ward_mobile);
-
+                TextView txtWardEmail = view.findViewById(R.id.txt_ward_email);
                 LinearLayout llWhatsappGroup = view.findViewById(R.id.ll_whatsapp_group);
 
 
@@ -239,13 +292,44 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 setText(ward.getWardOfficeAddress(), txtWardAddress);
                 setText(ward.getWardNo(), txtWardId);
                 setText(ward.getWardOfficePhone(), txtWardMobile);
-
+                setText(ward.getWardOfficeEmail(), txtWardEmail);
 
                 setText(zoneInfo.getZoneName(), txtZoneName);
                 setText(zoneInfo.getZoneNo(), txtZoneNumber);
                 setText(zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
                 setText(zoneInfo.getZonalOfficePhone(), txtZoneMobile);
 
+                llWhatsappGroup.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        IntentUtil.joinWhatsappGroup(HomeActivity.this,ward.getWardWhatsappGroupLink());
+                    }
+                });
+
+
+                txtWardMobile.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        IntentUtil.makeCallWard(HomeActivity.this,ward.getWardOfficePhone());
+                    }
+                });
+
+                txtZoneMobile.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        IntentUtil.makeCallZone(HomeActivity.this,zoneInfo.getZonalOfficePhone());
+                    }
+                });
+
+                txtWardEmail.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                        sendEmail(ward.getWardOfficeEmail());
+                    }
+                });
 
                 BottomSheetDialog dialog = new BottomSheetDialog(this);
                 dialog.setContentView(view);
@@ -283,7 +367,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
     public LatLng getCenterOfMap() {
-        return mGoogleMap.getCameraPosition().target;
+        if (mGoogleMap != null)
+            return mGoogleMap.getCameraPosition().target;
+        return new LatLng(120.0, 80.0);
     }
 
 
@@ -317,11 +403,22 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     private void setText(String text, TextView textView) {
 
-        if(TextUtils.isEmpty(text)){
+        if (TextUtils.isEmpty(text)) {
             textView.setText("-");
-        }else{
+        } else {
             textView.setText(text);
         }
 
     }
+
+
+
+
+
+
+//    private void sendEmail(String wardOfficeEmail) {
+//        Intent intent = new Intent(Intent.ACTION_SEND);
+//        intent.setData()
+//    }
+
 }

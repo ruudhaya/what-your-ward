@@ -129,6 +129,8 @@ dependencies {
     }
 
 
+    implementation calligraphy
+
 }
 repositories {
     mavenCentral()

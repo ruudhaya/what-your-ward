@@ -11,4 +11,9 @@ public interface HomeView extends MvpView {
 
     void showCategoryList(ArrayList<Ward> wardArrayList);
 
+    void showAnimation();
+
+    void hideAnimation();
+
+//    void hideAnimationAndFinish();
 }

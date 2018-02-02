@@ -14,6 +14,10 @@ public class Constants {
     public static final int SPLASH_TIME_OUT = 2000;
 
 
+    public static final String FONT_APP = "fonts/Montserrat-Regular.ttf";
+
+
+
     public interface INTENT_KEY {
         String PRODUCT_DETAILS = "Constants.INTENT_KEY.PRODUCT_DETAILS";
 

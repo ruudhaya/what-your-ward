@@ -67,6 +67,7 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
             public void run() {
 
                 startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
+                finish();
 
             }
         }, Constants.SPLASH_TIME_OUT);
