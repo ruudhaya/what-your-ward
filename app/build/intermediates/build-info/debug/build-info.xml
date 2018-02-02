@@ -6,22 +6,22 @@
     density="420dpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1517549021628"
+    timestamp="1517552519272"
     token="3057384587665019597"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="2280" />
+        duration="3278" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="16" />
+        duration="23" />
     <task
         name="verifier"
-        duration="2" />
+        duration="4" />
 
     <artifact
         location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1517549021628"
+        timestamp="1517552519272"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/split-apk/debug/slices/slice_2.apk"

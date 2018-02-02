@@ -152,7 +152,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         rxLocation = new RxLocation(HomeActivity.this);
 
         locationRequest = LocationRequest.create()
-                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                .setInterval(5000);
 
         rxPermissions
                 .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -214,25 +215,24 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
         Timber.i("onLocation Updated called");
 
-//        rxLocation.location().updates(locationRequest)
-//                .subscribeOn(AndroidSchedulers.mainThread())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(location -> {
-//
-//            latLng = new LatLng(location.getLatitude(), location.getLongitude());
-//
-//
-//            Timber.i("Lat lng inside onLocationUpdated");
-//            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-//
-//
-//            mapFragment.getMapAsync(this);
-//
-//
-//                    Timber.i("getMapAsync() called in onLocationUpdated");
-//
-//
-//                }, throwable -> Timber.e("Unable to fetch locations", throwable));
+        rxLocation.location().updates(locationRequest)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(location -> {
+
+            latLng = new LatLng(location.getLatitude(), location.getLongitude());
+
+
+            Timber.i("Lat lng inside onLocationUpdated");
+            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
+
+            mapFragment.getMapAsync(this);
+
+
+                    Timber.i("getMapAsync() called in onLocationUpdated");
+
+
+                }, throwable -> Timber.e("Unable to fetch locations", throwable));
 
 
 
