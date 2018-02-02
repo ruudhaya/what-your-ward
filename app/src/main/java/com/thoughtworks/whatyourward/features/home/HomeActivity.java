@@ -2,9 +2,14 @@ package com.thoughtworks.whatyourward.features.home;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.graphics.drawable.AnimationDrawable;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,7 +19,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Result;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.ResultCallbacks;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResult;
+import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -48,7 +64,10 @@ import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 
-public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCallback {
+public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCallback
+        , GoogleApiClient.OnConnectionFailedListener
+        , GoogleApiClient.ConnectionCallbacks
+            ,ResultCallback<LocationSettingsResult>{
 
     @Inject
     HomePresenter homePresenter;
@@ -75,21 +94,43 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     private RxPermissions rxPermissions;
 
-    private RxLocation rxLocation;
 
     private LatLng latLng;
     private SupportMapFragment mapFragment;
-    private LocationRequest locationRequest;
-    private CompositeDisposable disposable;
+
     private GoogleMap mGoogleMap;
     private ArrayList<Ward> mWardArrayList;
     private AnimationDrawable loadingAnimationDrawable;
 
 
+    protected GoogleApiClient mGoogleApiClient;
+    protected LocationRequest locationRequest;
+    private int REQUEST_CHECK_SETTINGS = 100;
+
+
+    // Location updates intervals in sec
+    private static int UPDATE_INTERVAL = 10000; // 10 sec
+    private static int FATEST_INTERVAL = 5000; // 5 sec
+    private Location location;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        homePresenter.onViewReady();
+
+        initGoogleApiClient();
+
+        homePresenter.startAnimation();
+
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+
+
+
+        mapFragment.getMapAsync(this);
+
+
+
+        homePresenter.loadWard();
     }
 
     @Override
@@ -123,30 +164,18 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
         mGoogleMap = googleMap;
 
+
         Timber.i("on Map ready called");
 
-        setDefaultConfig(googleMap);
 
-        try {
-
-            Timber.i("Kml loading");
-
-            kmlLayer = new KmlLayer(googleMap, R.raw.chennai_wards, this);
-            kmlLayer.addLayerToMap();
-
-            Timber.i("Kml loaded");
-            homePresenter.stopAnimation();
-
-        } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
-        }
 
     }
 
 
-    private void setDefaultConfig(GoogleMap googleMap) {
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, defaultZoom));
-        googleMap.getUiSettings().setZoomControlsEnabled(false);
+    private void setDefaultConfig() {
+
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, defaultZoom));
+        mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
 
 
 //        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
@@ -161,33 +190,34 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 //                    Manifest.permission.ACCESS_FINE_LOCATION,
 //                    Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
 //        }
+
+        try {
+
+            Timber.i("Kml loading");
+
+            kmlLayer = new KmlLayer(mGoogleMap, R.raw.chennai_wards, HomeActivity.this);
+            kmlLayer.addLayerToMap();
+
+            Timber.i("Kml loaded");
+            //            homePresenter.stopAnimation();
+
+            homePresenter.stopAnimation();
+
+        } catch (XmlPullParserException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
     @Override
     public void onViewReady() {
 
-        mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
 
-        requestLocationPermission();
-
-        homePresenter.startAnimation();
-
-        homePresenter.loadWard();
     }
 
     private void requestLocationPermission() {
 
         rxPermissions = new RxPermissions(HomeActivity.this); // where this is an Activity instance
-
-        disposable = new CompositeDisposable();
-
-        rxLocation = new RxLocation(HomeActivity.this);
-
-        locationRequest = LocationRequest.create()
-                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                .setInterval(5000);
 
         rxPermissions
                 .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -195,20 +225,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                     if (granted) {
 
 
-                        disposable.add(
-                                rxLocation.settings().checkAndHandleResolution(locationRequest)
-//                                        .subscribeOn(Schedulers.io())
-//                                        .observeOn(AndroidSchedulers.mainThread())
-                                        .subscribe(success -> {
+                        Timber.i("Location enabled success");
 
-                                            Timber.i("Location enabled success");
-
-                                            onLocationUpdated();
-                                        }, throwable ->
-
-                                                Timber.i("Location Permissions Not enabled", throwable))
-                        );
-
+                        updateLocation();
 
                     } else {
 
@@ -339,29 +358,37 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         }
     }
 
-    public void onLocationUpdated() {
+    public void updateLocation() {
 
         Timber.i("onLocation Updated called");
 
-        rxLocation.location().lastLocation()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(location -> {
+        location = LocationServices.FusedLocationApi
+                .getLastLocation(mGoogleApiClient);
 
-                    latLng = new LatLng(location.getLatitude(), location.getLongitude());
+        if (location != null) {
 
-
-                    Timber.i("Lat lng inside onLocationUpdated");
-                    // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+            latLng = new LatLng(location.getLatitude(), location.getLongitude());
 
 
-                    mapFragment.getMapAsync(this);
+            Timber.i("Lat lng inside onLocationUpdated");
+            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
 
-                    Timber.i("getMapAsync() called in onLocationUpdated");
+//            mapFragment.getMapAsync(this);
+
+            setDefaultConfig();
+
+            Timber.i("getMapAsync() called in onLocationUpdated");
+
+        } else {
+
+            mGoogleApiClient.connect();
+        }
 
 
-                }, throwable -> Timber.e("Unable to fetch locations", throwable));
+
+
+
 
     }
 
@@ -414,11 +441,126 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
 
+    private void initGoogleApiClient(){
+
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(LocationServices.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this).build();
+        mGoogleApiClient.connect();
+
+
+        locationRequest = LocationRequest.create();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(UPDATE_INTERVAL);
+        locationRequest.setFastestInterval(FATEST_INTERVAL);
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
+                .addLocationRequest(locationRequest);
+        builder.setAlwaysShow(true);
+        PendingResult<LocationSettingsResult> result =
+                LocationServices.SettingsApi.checkLocationSettings(
+                        mGoogleApiClient,
+                        builder.build()
+                );
+        result.setResultCallback(this);
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+        Timber.i("Google Api client connection suspended");
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+        Timber.i("Google Api client connection failed");
+
+
+    }
+
+    @Override
+    public void onResult(@NonNull LocationSettingsResult result) {
+
+        final Status status = result.getStatus();
+        switch (status.getStatusCode()) {
+            case LocationSettingsStatusCodes.SUCCESS:
+                // NO need to show the dialog;
+
+//                updateLocation();
+
+                requestLocationPermission();
+
+                break;
+
+            case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
+                //  GPS disabled show the user a dialog to turn it on
+                try {
+                    // Show the dialog by calling startResolutionForResult(), and check the result
+                    // in onActivityResult().
+
+                    status.startResolutionForResult(HomeActivity.this, REQUEST_CHECK_SETTINGS);
+
+                } catch (IntentSender.SendIntentException e) {
+
+                    //failed to show dialog
+                }
+                break;
+
+            case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
+                // Location settings are unavailable so not possible to show any dialog now
+                break;
+        }
+    }
+
 
 
 //    private void sendEmail(String wardOfficeEmail) {
 //        Intent intent = new Intent(Intent.ACTION_SEND);
 //        intent.setData()
 //    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CHECK_SETTINGS) {
+            if (resultCode == RESULT_OK) {
+
+
+                requestLocationPermission();
+
+                Toast.makeText(getApplicationContext(), "GPS enabled", Toast.LENGTH_LONG).show();
+            } else {
+
+                Toast.makeText(getApplicationContext(), "GPS is not enabled", Toast.LENGTH_LONG).show();
+            }
+
+        }
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mGoogleApiClient != null) {
+            mGoogleApiClient.connect();
+        }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
+    }
 
 }
