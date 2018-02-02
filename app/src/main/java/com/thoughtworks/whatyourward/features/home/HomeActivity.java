@@ -38,7 +38,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.data.kml.KmlLayer;
 import com.google.maps.android.data.kml.KmlPlacemark;
-import com.patloew.rxlocation.RxLocation;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.thoughtworks.whatyourward.R;
 import com.thoughtworks.whatyourward.data.model.ward.Ward;
@@ -191,21 +190,32 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 //                    Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
 //        }
 
-        try {
 
-            Timber.i("Kml loading");
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
 
-            kmlLayer = new KmlLayer(mGoogleMap, R.raw.chennai_wards, HomeActivity.this);
-            kmlLayer.addLayerToMap();
+                try {
 
-            Timber.i("Kml loaded");
-            //            homePresenter.stopAnimation();
+                    homePresenter.stopAnimation();
 
-            homePresenter.stopAnimation();
+                    Timber.i("Kml loading");
 
-        } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
-        }
+                    kmlLayer = new KmlLayer(mGoogleMap, R.raw.chennai_wards, HomeActivity.this);
+                    kmlLayer.addLayerToMap();
+
+                    Timber.i("Kml loaded");
+                    //            homePresenter.stopAnimation();
+
+
+                } catch (XmlPullParserException | IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        },5000);
+
+
+
     }
 
 
@@ -290,70 +300,77 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
                 Ward ward = getWardDetails();
-                ZoneInfo zoneInfo = ward.getZoneInfo();
 
-                View view = getLayoutInflater().inflate(R.layout.bottom_sheet, null);
+                if(ward != null) {
 
-
-                TextView txtZoneName = view.findViewById(R.id.txt_zone_name);
-                TextView txtZoneAddress = view.findViewById(R.id.txt_zone_address);
-                TextView txtZoneNumber = view.findViewById(R.id.txt_zone_number);
-                TextView txtZoneMobile = view.findViewById(R.id.txt_zone_mobile);
-                TextView txtWardName = view.findViewById(R.id.txt_ward_name);
-                TextView txtWardAddress = view.findViewById(R.id.txt_ward_address);
-                TextView txtWardId = view.findViewById(R.id.txt_ward_id);
-                TextView txtWardMobile = view.findViewById(R.id.txt_ward_mobile);
-                TextView txtWardEmail = view.findViewById(R.id.txt_ward_email);
-                LinearLayout llWhatsappGroup = view.findViewById(R.id.ll_whatsapp_group);
+                    ZoneInfo zoneInfo = ward.getZoneInfo();
 
 
-                setText(ward.getWardName(), txtWardName);
-                setText(ward.getWardOfficeAddress(), txtWardAddress);
-                setText(ward.getWardNo(), txtWardId);
-                setText(ward.getWardOfficePhone(), txtWardMobile);
-                setText(ward.getWardOfficeEmail(), txtWardEmail);
-
-                setText(zoneInfo.getZoneName(), txtZoneName);
-                setText(zoneInfo.getZoneNo(), txtZoneNumber);
-                setText(zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
-                setText(zoneInfo.getZonalOfficePhone(), txtZoneMobile);
-
-                llWhatsappGroup.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        IntentUtil.joinWhatsappGroup(HomeActivity.this,ward.getWardWhatsappGroupLink());
-                    }
-                });
+                    View view = getLayoutInflater().inflate(R.layout.bottom_sheet, null);
 
 
-                txtWardMobile.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                    TextView txtZoneName = view.findViewById(R.id.txt_zone_name);
+                    TextView txtZoneAddress = view.findViewById(R.id.txt_zone_address);
+                    TextView txtZoneNumber = view.findViewById(R.id.txt_zone_number);
+                    TextView txtZoneMobile = view.findViewById(R.id.txt_zone_mobile);
+                    TextView txtWardName = view.findViewById(R.id.txt_ward_name);
+                    TextView txtWardAddress = view.findViewById(R.id.txt_ward_address);
+                    TextView txtWardId = view.findViewById(R.id.txt_ward_id);
+                    TextView txtWardMobile = view.findViewById(R.id.txt_ward_mobile);
+                    TextView txtWardEmail = view.findViewById(R.id.txt_ward_email);
+                    LinearLayout llWhatsappGroup = view.findViewById(R.id.ll_whatsapp_group);
 
-                        IntentUtil.makeCallWard(HomeActivity.this,ward.getWardOfficePhone());
-                    }
-                });
 
-                txtZoneMobile.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                    setText("WARD: " + ward.getWardName(), txtWardName);
+                    setText("WARD OFFICE ADDRESS \n" + ward.getWardOfficeAddress(), txtWardAddress);
+                    setText(ward.getWardNo(), txtWardId);
+                    setText("CONTACT: " + ward.getWardOfficePhone(), txtWardMobile);
+                    setText("EMAIL: " + ward.getWardOfficeEmail(), txtWardEmail);
 
-                        IntentUtil.makeCallZone(HomeActivity.this,zoneInfo.getZonalOfficePhone());
-                    }
-                });
+                    setText("ZONE: " + zoneInfo.getZoneName(), txtZoneName);
+                    setText(zoneInfo.getZoneNo(), txtZoneNumber);
+                    setText("ZONAL OFFICE ADDRESS \n" + zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
+                    setText("CONTACT: " + zoneInfo.getZonalOfficePhone(), txtZoneMobile);
 
-                txtWardEmail.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                    llWhatsappGroup.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            IntentUtil.joinWhatsappGroup(HomeActivity.this, ward.getWardWhatsappGroupLink());
+                        }
+                    });
+
+
+                    txtWardMobile.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            IntentUtil.makeCallWard(HomeActivity.this, ward.getWardOfficePhone());
+                        }
+                    });
+
+                    txtZoneMobile.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            IntentUtil.makeCallZone(HomeActivity.this, zoneInfo.getZonalOfficePhone());
+                        }
+                    });
+
+                    txtWardEmail.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
 //                        sendEmail(ward.getWardOfficeEmail());
-                    }
-                });
+                        }
+                    });
 
-                BottomSheetDialog dialog = new BottomSheetDialog(this);
-                dialog.setContentView(view);
-                dialog.show();
+                    BottomSheetDialog dialog = new BottomSheetDialog(this);
+                    dialog.setContentView(view);
+                    dialog.show();
 
+                }else{
+
+                    Toast.makeText(this, "No ward details found for this area", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

@@ -3,7 +3,6 @@ package com.thoughtworks.whatyourward.features.home;
 import android.util.Log;
 
 import com.google.android.gms.location.LocationRequest;
-import com.patloew.rxlocation.RxLocation;
 import com.thoughtworks.whatyourward.data.DataManager;
 import com.thoughtworks.whatyourward.data.model.ward.Ward;
 import com.thoughtworks.whatyourward.features.base.BasePresenter;
