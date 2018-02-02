@@ -6,6 +6,16 @@ public class ZoneInfo{
 	private String zonalOfficeAddress;
 	private String zoneName;
 
+
+	public ZoneInfo(String zoneNo, String zoneName, String zonalOfficeAddress, String zonalOfficePhone) {
+
+		this.zoneNo = zoneNo;
+		this.zoneName = zoneName;
+		this.zonalOfficeAddress = zonalOfficeAddress;
+		this.zonalOfficePhone = zonalOfficePhone;
+	}
+
+
 	public void setZoneNo(String zoneNo){
 		this.zoneNo = zoneNo;
 	}

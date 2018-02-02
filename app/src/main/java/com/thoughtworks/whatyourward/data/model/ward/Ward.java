@@ -9,6 +9,17 @@ public class Ward {
 	private String wardOfficeEmail;
 	private String wardOfficeAddress;
 
+
+	public Ward(String wardNo, String wardName, String wardOfficeAddress, String wardOfficePhone, String wardOfficeEmail, String whatsappGroupLink) {
+		this.wardNo = wardNo;
+		this.wardName = wardName;
+		this.wardOfficeAddress = wardOfficeAddress;
+		this.wardOfficeEmail = wardOfficeEmail;
+		this.wardOfficePhone = wardOfficePhone;
+		this.wardWhatsappGroupLink = whatsappGroupLink;
+
+		this.zoneInfo = null;
+	}
 	public void setZoneInfo(ZoneInfo zoneInfo){
 		this.zoneInfo = zoneInfo;
 	}

@@ -84,7 +84,6 @@
             android:minHeight="0dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:onClick="getWardInfo"
             android:background="@color/blue_sky"
             android:text="Next"
             android:textColor="@color/white"

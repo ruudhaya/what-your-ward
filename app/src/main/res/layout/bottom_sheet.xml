@@ -20,6 +20,7 @@
 
 
             <TextView
+                android:id="@+id/txt_zone_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ZONE: ADYAR"
@@ -35,6 +36,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/txt_zone_address"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -45,6 +47,7 @@
 
 
                 <TextView
+                    android:id="@+id/txt_zone_number"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginLeft="16dp"
@@ -57,16 +60,9 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:lineSpacingExtra="5dp"
-                android:text="OFFICE LANDLINE: 24456961 / 24425963"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/txt_zone_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -87,6 +83,7 @@
 
 
             <TextView
+                android:id="@+id/txt_ward_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="WARD: THIRUVANMIYUR"
@@ -102,6 +99,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/txt_ward_address"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -112,6 +110,7 @@
 
 
                 <TextView
+                    android:id="@+id/txt_ward_id"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginLeft="16dp"
@@ -126,6 +125,7 @@
 
 
             <TextView
+                android:id="@+id/txt_ward_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -138,6 +138,7 @@
 
 
         <LinearLayout
+            android:id="@+id/ll_whatsapp_group"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="24dp"
