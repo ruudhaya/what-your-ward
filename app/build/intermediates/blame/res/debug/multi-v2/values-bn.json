@@ -13,11 +13,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "51",
+                        "startLines": "53",
                         "startColumns": "4",
-                        "startOffsets": "7007",
+                        "startOffsets": "7220",
                         "endColumns": "100",
-                        "endOffsets": "7103"
+                        "endOffsets": "7316"
                     }
                 },
                 {
@@ -55,6 +55,23 @@
                     }
                 },
                 {
+                    "source": "/Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-location-9.0.0.aar/22871d57e4636903dde3439c2ad2c368/res/values-bn/values.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "275,384",
+                        "endColumns": "108,103",
+                        "endOffsets": "379,483"
+                    },
+                    "to": {
+                        "startLines": "50,51",
+                        "startColumns": "4,4",
+                        "startOffsets": "6925,7034",
+                        "endColumns": "108,103",
+                        "endOffsets": "7029,7133"
+                    }
+                },
+                {
                     "source": "/Users/Chandru/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/220e080ee73ce778b1dc31d357d9ffa0/res/values-bn/values-bn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
@@ -64,11 +81,11 @@
                         "endOffsets": "209,321,427,521,626,755,833,911,998,1108,1216,1315,1425,1531,1644,1809,1914,1996"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,50",
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,52",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,214,326,432,526,631,760,838,916,1003,1113,1221,1320,1430,1536,1649,1814,6925",
+                        "startOffsets": "105,214,326,432,526,631,760,838,916,1003,1113,1221,1320,1430,1536,1649,1814,7138",
                         "endColumns": "108,111,105,93,104,128,77,77,86,109,107,98,109,105,112,164,104,81",
-                        "endOffsets": "209,321,427,521,626,755,833,911,998,1108,1216,1315,1425,1531,1644,1809,1914,7002"
+                        "endOffsets": "209,321,427,521,626,755,833,911,998,1108,1216,1315,1425,1531,1644,1809,1914,7215"
                     }
                 }
             ]

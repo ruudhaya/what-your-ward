@@ -4,6 +4,23 @@
             "outputFile": "/Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
             "map": [
                 {
+                    "source": "/Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-location-9.0.0.aar/22871d57e4636903dde3439c2ad2c368/res/values-ta/values.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "275,381",
+                        "endColumns": "105,94",
+                        "endOffsets": "376,471"
+                    },
+                    "to": {
+                        "startLines": "50,51",
+                        "startColumns": "4,4",
+                        "startOffsets": "6818,6924",
+                        "endColumns": "105,94",
+                        "endOffsets": "6919,7014"
+                    }
+                },
+                {
                     "source": "/Users/Chandru/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.0.aar/220e080ee73ce778b1dc31d357d9ffa0/res/values-ta/values-ta.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
@@ -13,11 +30,11 @@
                         "endOffsets": "214,319,434,523,630,756,834,911,993,1095,1199,1296,1406,1508,1615,1772,1872,1952"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,50",
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,52",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,219,324,439,528,635,761,839,916,998,1100,1204,1301,1411,1513,1620,1777,6818",
+                        "startOffsets": "105,219,324,439,528,635,761,839,916,998,1100,1204,1301,1411,1513,1620,1777,7019",
                         "endColumns": "113,104,114,88,106,125,77,76,81,101,103,96,109,101,106,156,99,79",
-                        "endOffsets": "214,319,434,523,630,756,834,911,993,1095,1199,1296,1406,1508,1615,1772,1872,6893"
+                        "endOffsets": "214,319,434,523,630,756,834,911,993,1095,1199,1296,1406,1508,1615,1772,1872,7094"
                     }
                 },
                 {
@@ -30,11 +47,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "51",
+                        "startLines": "53",
                         "startColumns": "4",
-                        "startOffsets": "6898",
+                        "startOffsets": "7099",
                         "endColumns": "100",
-                        "endOffsets": "6994"
+                        "endOffsets": "7195"
                     }
                 },
                 {

@@ -178,6 +178,12 @@
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="place_autocomplete_prediction_primary_text">#212121</color>
+    <color name="place_autocomplete_prediction_primary_text_highlight">#757575</color>
+    <color name="place_autocomplete_prediction_secondary_text">#757575</color>
+    <color name="place_autocomplete_search_hint">#BDBDBD</color>
+    <color name="place_autocomplete_search_text">#212121</color>
+    <color name="place_autocomplete_separator">#1F000000</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -778,6 +784,16 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="place_autocomplete_button_padding">16dp</dimen>
+    <dimen name="place_autocomplete_powered_by_google_height">40dp</dimen>
+    <dimen name="place_autocomplete_powered_by_google_start">16dp</dimen>
+    <dimen name="place_autocomplete_prediction_height">72dp</dimen>
+    <dimen name="place_autocomplete_prediction_horizontal_margin">16dp</dimen>
+    <dimen name="place_autocomplete_prediction_primary_text">16sp</dimen>
+    <dimen name="place_autocomplete_prediction_secondary_text">14sp</dimen>
+    <dimen name="place_autocomplete_progress_horizontal_margin">16dp</dimen>
+    <dimen name="place_autocomplete_progress_size">24dp</dimen>
+    <dimen name="place_autocomplete_separator_start">72dp</dimen>
     <dimen name="text_body">16sp</dimen>
     <dimen name="text_headline">24sp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
@@ -895,6 +911,7 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="define_rxlocation"/>
     <string name="dialog_action_ok">OK</string>
     <string name="dialog_error_title">Sorry</string>
     <string name="error_message">There was a problem loading the pokemon, please try again!</string>
@@ -903,12 +920,24 @@
     <string name="error_title">Oops</string>
     <string name="google_maps_key">AIzaSyDEMzNzxNTiDaTp13ZPqStqZBheXTEQA3I</string>
     <string name="hello_world">Hello world!</string>
+    <string name="library_rxlocation_author">Patrick Löwenstein</string>
+    <string name="library_rxlocation_authorWebsite">https://nullpointer.wtf</string>
+    <string name="library_rxlocation_classPath">com.patloew.rxlocation.RxLocation</string>
+    <string name="library_rxlocation_isOpenSource">true</string>
+    <string name="library_rxlocation_libraryDescription">This library wraps the Location APIs in RxJava 2 Observables, Singles and Maybes. No more managing GoogleApiClients! Also, the resolution of the location settings check is optionally handled by the lib.</string>
+    <string name="library_rxlocation_libraryName">RxLocation</string>
+    <string name="library_rxlocation_libraryVersion">1.0.2</string>
+    <string name="library_rxlocation_libraryWebsite">https://github.com/patloew/RxLocation</string>
+    <string name="library_rxlocation_licenseId">apache_2_0</string>
+    <string name="library_rxlocation_repositoryLink">https://github.com/patloew/RxLocation</string>
     <string name="map_title_ward">WHAT YOUR WARD?</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="place_autocomplete_clear_button">Clear search</string>
+    <string name="place_autocomplete_search_hint">Search</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_cart_list">CartListActivity</string>

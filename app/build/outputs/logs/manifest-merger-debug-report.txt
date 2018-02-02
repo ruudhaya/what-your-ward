@@ -6,6 +6,7 @@ INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/m
 INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
 MERGED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:2:1-47:12
 MERGED from [io.realm:realm-android-library:4.1.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/realm-android-library-4.1.0.aar/df50424bd91c14182ca3379ff2fa3730/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-location:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-location-9.0.0.aar/22871d57e4636903dde3439c2ad2c368/AndroidManifest.xml:16:1-20:12
 MERGED from [com.android.support:cardview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.0.aar/b3386d04a031a7f3c4e3fbd48312c5a9/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/design-27.0.0.aar/2b651f53aff38f1980bc022ed9838100/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.polok.localify:localify:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/localify-1.0.0.aar/9b1f140c1130f9c2451e9be05b11dfcc/AndroidManifest.xml:2:1-11:12
@@ -31,7 +32,8 @@ MERGED from [com.jakewharton.timber:timber:4.5.1] /Users/Chandru/.gradle/caches/
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/e9a8afebd0258c691162b6c76c8e7f9a/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:2:1-13:12
 MERGED from [com.tbruyelle.rxpermissions2:rxpermissions:0.9.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxpermissions-0.9.5.aar/c61bdd56b4eada2dd05608f6313ceaf8/AndroidManifest.xml:2:1-13:12
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:2:1-30:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/7d7a6113ea46ba7c0d2c8a05589c8bb3/AndroidManifest.xml:15:1-21:12
+MERGED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:2:1-18:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/relinker-1.2.2.aar/99ae758770815a2641019fa84a6e9871/AndroidManifest.xml:2:1-9:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:17:1-30:12
 INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:2:1-9:12
@@ -59,18 +61,16 @@ MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gr
 		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:7:5-79
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:14:5-79
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:14:5-79
 	android:name
 		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:8:5-81
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:12:5-81
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:12:5-81
 	android:name
 		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:8:22-78
 application
 ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml:9:5-45:19
+MERGED from [com.google.android.gms:play-services-location:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-location-9.0.0.aar/22871d57e4636903dde3439c2ad2c368/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-location:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-location-9.0.0.aar/22871d57e4636903dde3439c2ad2c368/AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:27:5-20
 MERGED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:27:5-20
 MERGED from [com.google.android.gms:play-services-base:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-base-9.0.0.aar/80bcb430d1863f5156cdc44c9de80f41/AndroidManifest.xml:19:5-23:19
@@ -89,8 +89,8 @@ MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gra
 MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:7:5-11:19
 MERGED from [com.tbruyelle.rxpermissions2:rxpermissions:0.9.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxpermissions-0.9.5.aar/c61bdd56b4eada2dd05608f6313ceaf8/AndroidManifest.xml:11:5-20
 MERGED from [com.tbruyelle.rxpermissions2:rxpermissions:0.9.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxpermissions-0.9.5.aar/c61bdd56b4eada2dd05608f6313ceaf8/AndroidManifest.xml:11:5-20
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:18:5-28:19
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:18:5-28:19
+MERGED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:11:5-16:19
+MERGED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:11:5-16:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
@@ -143,6 +143,8 @@ INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/m
 INJECTED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/main/AndroidManifest.xml
 MERGED from [io.realm:realm-android-library:4.1.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/realm-android-library-4.1.0.aar/df50424bd91c14182ca3379ff2fa3730/AndroidManifest.xml:7:5-9:41
 MERGED from [io.realm:realm-android-library:4.1.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/realm-android-library-4.1.0.aar/df50424bd91c14182ca3379ff2fa3730/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-location:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-location-9.0.0.aar/22871d57e4636903dde3439c2ad2c368/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-location-9.0.0.aar/22871d57e4636903dde3439c2ad2c368/AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:cardview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.0.aar/b3386d04a031a7f3c4e3fbd48312c5a9/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.0.aar/b3386d04a031a7f3c4e3fbd48312c5a9/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/design-27.0.0.aar/2b651f53aff38f1980bc022ed9838100/AndroidManifest.xml:20:5-44
@@ -193,8 +195,10 @@ MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gra
 MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/9fa85507dc57f5aa25a6d65addd05244/AndroidManifest.xml:5:5-43
 MERGED from [com.tbruyelle.rxpermissions2:rxpermissions:0.9.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxpermissions-0.9.5.aar/c61bdd56b4eada2dd05608f6313ceaf8/AndroidManifest.xml:7:5-9:41
 MERGED from [com.tbruyelle.rxpermissions2:rxpermissions:0.9.5] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxpermissions-0.9.5.aar/c61bdd56b4eada2dd05608f6313ceaf8/AndroidManifest.xml:7:5-9:41
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:8:5-10:41
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:8:5-10:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/7d7a6113ea46ba7c0d2c8a05589c8bb3/AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.0.1] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxandroid-2.0.1.aar/7d7a6113ea46ba7c0d2c8a05589c8bb3/AndroidManifest.xml:19:5-43
+MERGED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:7:5-9:41
 MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/relinker-1.2.2.aar/99ae758770815a2641019fa84a6e9871/AndroidManifest.xml:7:5-43
 MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/relinker-1.2.2.aar/99ae758770815a2641019fa84a6e9871/AndroidManifest.xml:7:5-43
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:20:5-22:41
@@ -217,8 +221,6 @@ ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debu
 		ADDED from /Users/Chandru/Desktop/Android/ThoughtWorks/WhatYourWard/app/src/debug/AndroidManifest.xml:7:22-65
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:20:5-78
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:13:5-79
-MERGED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:13:5-79
 	android:name
 		ADDED from [com.google.android.gms:play-services-maps:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.0.0.aar/30b74241755cb03f5885a67a4a351baf/AndroidManifest.xml:20:22-76
 uses-feature#0x00020000
@@ -253,32 +255,14 @@ MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/Chandru/.gra
 		ADDED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:23:13-66
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:9.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.0.0.aar/e956a6dbba35774b7c672e2b1b5813b7/AndroidManifest.xml:22:13-58
-uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
-ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:15:5-98
+activity#com.patloew.rxlocation.LocationSettingsActivity
+ADDED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:12:9-15:75
+	android:launchMode
+		ADDED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:14:13-44
+	android:theme
+		ADDED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:15:13-72
 	android:name
-		ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:15:22-95
-uses-permission#com.google.android.gms.permission.ACTIVITY_RECOGNITION
-ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:16:5-94
-	android:name
-		ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:16:22-91
-service#io.nlopez.smartlocation.activity.providers.ActivityGooglePlayServicesProvider$ActivityRecognitionService
-ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:19:9-21:40
-	android:exported
-		ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:21:13-37
-	android:name
-		ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:20:13-132
-service#io.nlopez.smartlocation.geofencing.providers.GeofencingGooglePlayServicesProvider$GeofencingService
-ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:22:9-24:40
-	android:exported
-		ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:24:13-37
-	android:name
-		ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:23:13-127
-service#io.nlopez.smartlocation.geocoding.providers.AndroidGeocodingProvider$AndroidGeocodingService
-ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:25:9-27:40
-	android:exported
-		ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:27:13-37
-	android:name
-		ADDED from [io.nlopez.smartlocation:library:3.3.3] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/library-3.3.3.aar/5e5f132bf3128809fd8515fc803e5c94/AndroidManifest.xml:26:13-120
+		ADDED from [com.patloew.rxlocation:rxlocation:1.0.4] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/rxlocation-1.0.4.aar/b57bd1928ac5ea039f6385cf5425f17c/AndroidManifest.xml:13:13-75
 meta-data#android.arch.lifecycle.VERSION
 ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/Chandru/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d23b27fa6210e8a4f73b05d5757f7a06/AndroidManifest.xml:25:9-27:47
 	android:value
