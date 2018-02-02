@@ -434,13 +434,15 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         String wardNo = getWardNum(center);
 
 
-        for (Ward ward : mWardArrayList) {
+        if(!TextUtils.isEmpty(wardNo)) {
+            for (Ward ward : mWardArrayList) {
 
-            if (wardNo.equalsIgnoreCase(ward.getWardNo())) {
-                return ward;
+                if (ward != null && wardNo.equalsIgnoreCase(ward.getWardNo())) {
+                    return ward;
+                }
             }
-        }
 
+        }
         return null;
     }
 
