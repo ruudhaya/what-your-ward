@@ -206,7 +206,19 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 .subscribe(granted -> {
 
+                    if(NetworkUtil.isNetworkConnected(this)) {
                         homePresenter.handleLocationPermission(granted);
+
+                    }else{
+
+                        Toast.makeText(HomeActivity.this,
+                                R.string.error_no_internet,
+                                Toast.LENGTH_SHORT).show();
+
+                        homePresenter.stopLoadingAnimation();
+
+                        homePresenter.closeScreen();
+                    }
 
 
                 });
@@ -368,6 +380,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
             Timber.i("getMapAsync() called in onLocationUpdated");
 
         } else {
+
+            Timber.i("Location object is null. Trying to reconnect.");
+            initGoogleApiClient();
 
             mGoogleApiClient.connect();
         }
