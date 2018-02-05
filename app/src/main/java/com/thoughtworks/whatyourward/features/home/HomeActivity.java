@@ -304,79 +304,59 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 Ward ward = getWardDetails();
 
                 if(ward != null) {
-
-                    ZoneInfo zoneInfo = ward.getZoneInfo();
-
-
-                    View view = getLayoutInflater().inflate(R.layout.bottom_sheet, null);
-
-
-                    TextView txtZoneName = view.findViewById(R.id.txt_zone_name);
-                    TextView txtZoneAddress = view.findViewById(R.id.txt_zone_address);
-                    TextView txtZoneNumber = view.findViewById(R.id.txt_zone_number);
-                    TextView txtZoneMobile = view.findViewById(R.id.txt_zone_mobile);
-                    TextView txtWardName = view.findViewById(R.id.txt_ward_name);
-                    TextView txtWardAddress = view.findViewById(R.id.txt_ward_address);
-                    TextView txtWardId = view.findViewById(R.id.txt_ward_id);
-                    TextView txtWardMobile = view.findViewById(R.id.txt_ward_mobile);
-                    TextView txtWardEmail = view.findViewById(R.id.txt_ward_email);
-                    LinearLayout llWhatsappGroup = view.findViewById(R.id.ll_whatsapp_group);
-
-
-                    setText("WARD: " + ward.getWardName(), txtWardName);
-                    setText("WARD OFFICE ADDRESS \n" + ward.getWardOfficeAddress(), txtWardAddress);
-                    setText(ward.getWardNo(), txtWardId);
-                    setText("CONTACT: " + ward.getWardOfficePhone(), txtWardMobile);
-                    setText("EMAIL: " + ward.getWardOfficeEmail(), txtWardEmail);
-
-                    setText("ZONE: " + zoneInfo.getZoneName(), txtZoneName);
-                    setText(zoneInfo.getZoneNo(), txtZoneNumber);
-                    setText("ZONAL OFFICE ADDRESS \n" + zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
-                    setText("CONTACT: " + zoneInfo.getZonalOfficePhone(), txtZoneMobile);
-
-                    llWhatsappGroup.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            IntentUtil.joinWhatsappGroup(HomeActivity.this, ward.getWardWhatsappGroupLink());
-                        }
-                    });
-
-
-                    txtWardMobile.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            IntentUtil.makeCallWard(HomeActivity.this, ward.getWardOfficePhone());
-                        }
-                    });
-
-                    txtZoneMobile.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            IntentUtil.makeCallZone(HomeActivity.this, zoneInfo.getZonalOfficePhone());
-                        }
-                    });
-
-                    txtWardEmail.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-//                        sendEmail(ward.getWardOfficeEmail());
-                        }
-                    });
-
-                    BottomSheetDialog dialog = new BottomSheetDialog(this);
-                    dialog.setContentView(view);
-                    dialog.show();
-
+                    showWardDetailsBottomSheet(ward);
                 }else{
-
                     Toast.makeText(this, "No ward details found for this area", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
     }
 
+
+    @Override
+    public void showWardDetailsBottomSheet(Ward ward){
+
+        ZoneInfo zoneInfo = ward.getZoneInfo();
+
+        View view = getLayoutInflater().inflate(R.layout.bottom_sheet, null);
+
+        TextView txtZoneName = view.findViewById(R.id.txt_zone_name);
+        TextView txtZoneAddress = view.findViewById(R.id.txt_zone_address);
+        TextView txtZoneNumber = view.findViewById(R.id.txt_zone_number);
+        TextView txtZoneMobile = view.findViewById(R.id.txt_zone_mobile);
+        TextView txtWardName = view.findViewById(R.id.txt_ward_name);
+        TextView txtWardAddress = view.findViewById(R.id.txt_ward_address);
+        TextView txtWardId = view.findViewById(R.id.txt_ward_id);
+        TextView txtWardMobile = view.findViewById(R.id.txt_ward_mobile);
+        TextView txtWardEmail = view.findViewById(R.id.txt_ward_email);
+        LinearLayout llWhatsappGroup = view.findViewById(R.id.ll_whatsapp_group);
+
+
+        setText(getString(R.string.text_ward_name_hint) + ward.getWardName(), txtWardName);
+        setText(getString(R.string.text_ward_address_hint) + ward.getWardOfficeAddress(), txtWardAddress);
+        setText(ward.getWardNo(), txtWardId);
+        setText(getString(R.string.text_ward_contact_hint) + ward.getWardOfficePhone(), txtWardMobile);
+        setText(getString(R.string.text_ward_email_hint) + ward.getWardOfficeEmail(), txtWardEmail);
+
+        setText(getString(R.string.text_zone_name_hint) + zoneInfo.getZoneName(), txtZoneName);
+        setText(zoneInfo.getZoneNo(), txtZoneNumber);
+        setText(getString(R.string.text_zone_address_hint)+ zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
+        setText(getString(R.string.text_zone_contact_hint) + zoneInfo.getZonalOfficePhone(), txtZoneMobile);
+
+        llWhatsappGroup.setOnClickListener(v -> IntentUtil.joinWhatsappGroup(HomeActivity.this, ward.getWardWhatsappGroupLink()));
+
+        txtWardMobile.setOnClickListener(v -> IntentUtil.makeCallWard(HomeActivity.this, ward.getWardOfficePhone()));
+
+        txtZoneMobile.setOnClickListener(v -> IntentUtil.makeCallZone(HomeActivity.this, zoneInfo.getZonalOfficePhone()));
+
+        txtWardEmail.setOnClickListener(v -> {
+        });
+
+        BottomSheetDialog dialog = new BottomSheetDialog(this);
+        dialog.setContentView(view);
+        dialog.show();
+
+    }
     public void updateLocation() {
 
         Timber.i("onLocation Updated called");
@@ -537,13 +517,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 break;
         }
     }
-
-
-
-//    private void sendEmail(String wardOfficeEmail) {
-//        Intent intent = new Intent(Intent.ACTION_SEND);
-//        intent.setData()
-//    }
 
 
     @Override

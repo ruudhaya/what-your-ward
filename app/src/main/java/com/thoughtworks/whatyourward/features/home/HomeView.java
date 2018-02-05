@@ -15,5 +15,7 @@ public interface HomeView extends MvpView {
 
     void hideAnimation();
 
+    void showWardDetailsBottomSheet(Ward ward);
+
 //    void hideAnimationAndFinish();
 }

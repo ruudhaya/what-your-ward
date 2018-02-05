@@ -10,6 +10,7 @@ import com.thoughtworks.whatyourward.injection.ConfigPersistent;
 import com.thoughtworks.whatyourward.interfaces.OnWardSuccess;
 
 import java.util.ArrayList;
+
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -21,14 +22,11 @@ public class HomePresenter extends BasePresenter<HomeView> {
     private final DataManager dataManager;
 
 
-
     @Inject
     public HomePresenter(DataManager dataManager) {
         this.dataManager = dataManager;
 
     }
-
-
 
 
     @Override
@@ -40,12 +38,12 @@ public class HomePresenter extends BasePresenter<HomeView> {
     }
 
 
-    public void onViewReady(){
+    public void onViewReady() {
         getView().onViewReady();
     }
 
 
-    public void loadWard(){
+    public void loadWard() {
 
         dataManager.loadWard(new OnWardSuccess() {
             @Override
@@ -58,16 +56,22 @@ public class HomePresenter extends BasePresenter<HomeView> {
         });
     }
 
-    public void startAnimation(){
+    public void startAnimation() {
 
         getView().showAnimation();
     }
 
 
-    public void stopAnimation(){
+    public void stopAnimation() {
 
         getView().hideAnimation();
 
+    }
+
+    public void showWardDetailsBottomSheet(Ward ward) {
+
+
+        getView().showWardDetailsBottomSheet(ward);
     }
 
 
