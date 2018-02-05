@@ -25,7 +25,7 @@ public class NetworkUtil {
         return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
-    private static boolean isAirplaneModeOn(Context context) {
+    public static boolean isAirplaneModeOn(Context context) {
         return Settings.Global.getInt(context.getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0) != 0;
     }
 }

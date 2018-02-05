@@ -44,6 +44,7 @@ import com.thoughtworks.whatyourward.features.base.BaseActivity;
 import com.thoughtworks.whatyourward.injection.component.ActivityComponent;
 import com.thoughtworks.whatyourward.util.IntentUtil;
 import com.thoughtworks.whatyourward.util.KmlUtil;
+import com.thoughtworks.whatyourward.util.NetworkUtil;
 import com.thoughtworks.whatyourward.util.ParseUtil;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -148,8 +149,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), Constants.DEFAULT.MAP_ZOOM));
         mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
 
-
-
         handler =  new Handler();
         
         handler.postDelayed(() -> {
@@ -207,6 +206,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
                         homePresenter.handleLocationPermission(granted);
 
+
                 });
     }
 
@@ -261,8 +261,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
             case R.id.btn_next:
 
                 homePresenter.clickNextButton();
-
-
 
                 break;
         }
@@ -397,6 +395,17 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         finish();
     }
 
+    @Override
+    public void showAirplaneModeIsOnError() {
+
+        Toast.makeText(getApplicationContext(), "Please turn off the Airplane mode to use the app", Toast.LENGTH_LONG).show();
+
+        homePresenter.stopLoadingAnimation();
+
+        homePresenter.closeScreen();
+
+    }
+
 
     private LatLng getMapCenterPosition() {
         if (mGoogleMap != null)
@@ -449,15 +458,23 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void onConnected(@Nullable Bundle bundle) {
 
-        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
-                .addLocationRequest(locationRequest);
-        builder.setAlwaysShow(true);
-        PendingResult<LocationSettingsResult> result =
-                LocationServices.SettingsApi.checkLocationSettings(
-                        mGoogleApiClient,
-                        builder.build()
-                );
-        result.setResultCallback(this);
+        if(!NetworkUtil.isAirplaneModeOn(HomeActivity.this)) {
+
+            LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
+                    .addLocationRequest(locationRequest);
+            builder.setAlwaysShow(true);
+            PendingResult<LocationSettingsResult> result =
+                    LocationServices.SettingsApi.checkLocationSettings(
+                            mGoogleApiClient,
+                            builder.build()
+                    );
+            result.setResultCallback(this);
+
+        }else{
+
+            homePresenter.handleAirplaneModeOnState();
+        }
+
 
     }
 
@@ -534,7 +551,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void onBackPressed() {
 
-        handler.removeCallbacksAndMessages(null);
+        if(handler != null) {
+            handler.removeCallbacksAndMessages(null);
+        }
         super.onBackPressed();
     }
 }
