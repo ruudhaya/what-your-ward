@@ -62,15 +62,12 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
     @Override
     public void goToNextScreen() {
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        new Handler().postDelayed(() -> {
 
-                startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
-                finish();
+            startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
+            finish();
 
-            }
-        }, Constants.SPLASH_TIME_OUT);
+        }, Constants.INTERVAL_IN_MS.SPLASH_TIME_OUT);
 
 
     }
