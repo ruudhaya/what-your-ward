@@ -149,6 +149,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), Constants.DEFAULT.MAP_ZOOM));
         mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
 
+
+
         new Handler().postDelayed(() -> {
 
             try {
@@ -294,6 +296,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         txtZoneMobile.setOnClickListener(v -> IntentUtil.makeCallZone(HomeActivity.this, zoneInfo.getZonalOfficePhone()));
 
         txtWardEmail.setOnClickListener(v -> {
+
+            IntentUtil.sendEmail(HomeActivity.this, ward.getWardOfficeEmail());
         });
 
         BottomSheetDialog dialog = new BottomSheetDialog(this);
@@ -303,15 +307,15 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
     private void setWardDetailsText(Ward ward, ZoneInfo zoneInfo, TextView txtZoneName, TextView txtZoneAddress, TextView txtZoneNumber, TextView txtZoneMobile, TextView txtWardName, TextView txtWardAddress, TextView txtWardId, TextView txtWardMobile, TextView txtWardEmail) {
-        setText(getString(R.string.text_ward_name_hint) + ward.getWardName(), txtWardName);
-        setText(getString(R.string.text_ward_address_hint) + ward.getWardOfficeAddress(), txtWardAddress);
-        setText(ward.getWardNo(), txtWardId);
-        setText(getString(R.string.text_ward_contact_hint) + ward.getWardOfficePhone(), txtWardMobile);
-        setText(getString(R.string.text_ward_email_hint) + ward.getWardOfficeEmail(), txtWardEmail);
-        setText(getString(R.string.text_zone_name_hint) + zoneInfo.getZoneName(), txtZoneName);
-        setText(zoneInfo.getZoneNo(), txtZoneNumber);
-        setText(getString(R.string.text_zone_address_hint)+ zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
-        setText(getString(R.string.text_zone_contact_hint) + zoneInfo.getZonalOfficePhone(), txtZoneMobile);
+        setText(getString(R.string.text_ward_name_hint),ward.getWardName(), txtWardName);
+        setText(getString(R.string.text_ward_address_hint),ward.getWardOfficeAddress(), txtWardAddress);
+        setText("",ward.getWardNo(), txtWardId);
+        setText(getString(R.string.text_ward_contact_hint) , ward.getWardOfficePhone(), txtWardMobile);
+        setText(getString(R.string.text_ward_email_hint), ward.getWardOfficeEmail(), txtWardEmail);
+        setText(getString(R.string.text_zone_name_hint), zoneInfo.getZoneName(), txtZoneName);
+        setText("",zoneInfo.getZoneNo(), txtZoneNumber);
+        setText(getString(R.string.text_zone_address_hint), zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
+        setText(getString(R.string.text_zone_contact_hint), zoneInfo.getZonalOfficePhone(), txtZoneMobile);
     }
 
     @Override
@@ -414,12 +418,12 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
 
-    private void setText(String text, TextView textView) {
+    private void setText(String appendText, String text, TextView textView) {
 
         if (TextUtils.isEmpty(text)) {
-            textView.setText("-");
+            textView.setText(appendText + "--");
         } else {
-            textView.setText(text);
+            textView.setText(appendText + text);
         }
 
     }
@@ -525,4 +529,11 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         }
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+
+        super.onBackPressed();
+    }
 }

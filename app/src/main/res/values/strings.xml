@@ -27,15 +27,15 @@
 
 
     <string name="map_title_ward">WHAT YOUR WARD?</string>
-    <string name="text_ward_name_hint">WARD: </string>
+    <string name="text_ward_name_hint">WARD:\u0020</string>
     <string name="text_ward_address_hint">WARD OFFICE ADDRESS \n</string>
-    <string name="text_ward_contact_hint">CONTACT: </string>
-    <string name="text_ward_email_hint">EMAIL: </string>
+    <string name="text_ward_contact_hint">CONTACT:\u0020</string>
+    <string name="text_ward_email_hint">EMAIL:\u0020</string>
 
 
-    <string name="text_zone_name_hint">ZONE: </string>
+    <string name="text_zone_name_hint">ZONE:\u0020</string>
     <string name="text_zone_address_hint">ZONAL OFFICE ADDRESS \n</string>
-    <string name="text_zone_contact_hint">CONTACT: </string>
+    <string name="text_zone_contact_hint">CONTACT:\u0020</string>
 
 
 </resources>
