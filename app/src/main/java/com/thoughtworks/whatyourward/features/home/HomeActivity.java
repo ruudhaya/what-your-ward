@@ -96,8 +96,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     protected GoogleApiClient mGoogleApiClient;
     protected LocationRequest locationRequest;
-
-
+    private Handler handler;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,7 +150,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
 
-        new Handler().postDelayed(() -> {
+        handler =  new Handler();
+        
+        handler.postDelayed(() -> {
 
             try {
 
@@ -533,7 +534,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void onBackPressed() {
 
-
+        handler.removeCallbacksAndMessages(null);
         super.onBackPressed();
     }
 }

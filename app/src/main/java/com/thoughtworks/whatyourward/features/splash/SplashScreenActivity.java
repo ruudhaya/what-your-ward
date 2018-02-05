@@ -28,6 +28,7 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
 
     @BindView(R.id.img_splash)
     ImageView imgSplash;
+    private Handler handler;
 
 
     @Override
@@ -61,8 +62,10 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
 
     @Override
     public void goToNextScreen() {
+        handler =  new Handler();
 
-        new Handler().postDelayed(() -> {
+
+        handler.postDelayed(() -> {
 
             startActivity(new Intent(SplashScreenActivity.this, HomeActivity.class));
             finish();
@@ -82,5 +85,11 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+        handler.removeCallbacksAndMessages(null);
+        super.onBackPressed();
+    }
 }
 
