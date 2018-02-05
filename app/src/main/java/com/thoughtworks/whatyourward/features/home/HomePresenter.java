@@ -76,21 +76,18 @@ public class HomePresenter extends BasePresenter<HomeView> {
             for (Ward ward : wardList) {
                 if (ward != null && wardNo.equalsIgnoreCase(ward.getWardNo())) {
                     getView().showWardDetailsBottomSheet(ward);
-                }else{
-                    getView().showWardDetailsNotFoundError();
                 }
             }
+        }else{
+            getView().showWardDetailsNotFoundError();
         }
     }
 
     public void handleGpsPermissionState(int resultCode) {
 
         if (resultCode == Constants.RESULT_CODES.SUCCESS) {
-
             getView().onGpsPermissionEnabled();
-
         }else {
-
             getView().showGpsPermissionError();
         }
 
