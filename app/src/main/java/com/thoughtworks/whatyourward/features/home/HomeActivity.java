@@ -36,6 +36,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.data.kml.KmlLayer;
 import com.google.maps.android.data.kml.KmlPlacemark;
 import com.tbruyelle.rxpermissions2.RxPermissions;
+import com.thoughtworks.whatyourward.Constants;
 import com.thoughtworks.whatyourward.R;
 import com.thoughtworks.whatyourward.data.model.ward.Ward;
 import com.thoughtworks.whatyourward.data.model.ward.ZoneInfo;
@@ -97,18 +98,11 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     protected LocationRequest locationRequest;
 
 
-    private int REQUEST_CHECK_SETTINGS = 100;
-
-    private static int UPDATE_INTERVAL = 10000; // 10 sec
-    private static int FATEST_INTERVAL = 5000; // 5 sec
-
-    private static final int defaultZoom = 13;
 
     private static String ATTRIBUTE_KML_NAME = "name";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         homePresenter.onViewReady();
 
@@ -151,31 +145,28 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
 
-    private void setDefaultConfig(Location location) {
+    private void configureMapAndAddLayer(Location location) {
 
-        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), defaultZoom));
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), Constants.DEFAULT.MAP_ZOOM));
         mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        new Handler().postDelayed(() -> {
 
-                try {
+            try {
 
-                    homePresenter.stopAnimation();
+                homePresenter.stopAnimation();
 
-                    Timber.i("Kml loading");
+                Timber.i("Kml loading");
 
-                    kmlLayer = new KmlLayer(mGoogleMap, R.raw.chennai_wards, HomeActivity.this);
-                    kmlLayer.addLayerToMap();
+                kmlLayer = new KmlLayer(mGoogleMap, R.raw.chennai_wards, HomeActivity.this);
+                kmlLayer.addLayerToMap();
 
-                    Timber.i("Kml loaded");
-                    //            homePresenter.stopAnimation();
+                Timber.i("Kml loaded");
+                //            homePresenter.stopAnimation();
 
 
-                } catch (XmlPullParserException | IOException e) {
-                    e.printStackTrace();
-                }
+            } catch (XmlPullParserException | IOException e) {
+                e.printStackTrace();
             }
         },5000);
 
@@ -197,6 +188,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         homePresenter.loadWard();
     }
 
+
+
     private void initGoogleMaps() {
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -205,15 +198,13 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
     @Override
-    public void checkLocationPermission() {
+    public void checkAndHandleLocationPermission() {
 
         rxPermissions = new RxPermissions(HomeActivity.this); // where this is an Activity instance
 
         rxPermissions
                 .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 .subscribe(granted -> {
-
-
 
                         homePresenter.handleLocationPermission(granted);
 
@@ -344,7 +335,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
             Timber.i("Lat lng inside onLocationUpdated");
 
-            setDefaultConfig(location);
+            configureMapAndAddLayer(location);
 
             Timber.i("getMapAsync() called in onLocationUpdated");
 
@@ -370,6 +361,22 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void showWardDetailsNotFoundError() {
         Toast.makeText(this, "No ward details found for this area", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onGpsPermissionEnabled() {
+
+        Toast.makeText(getApplicationContext(), "GPS enabled", Toast.LENGTH_LONG).show();
+
+        homePresenter.checkAndHandleLocationPermission();
+
+    }
+
+    @Override
+    public void onGpsPermissionDenied() {
+
+        Toast.makeText(getApplicationContext(), "GPS is not enabled", Toast.LENGTH_LONG).show();
+
     }
 
 
@@ -418,8 +425,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
         locationRequest = LocationRequest.create();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        locationRequest.setInterval(UPDATE_INTERVAL);
-        locationRequest.setFastestInterval(FATEST_INTERVAL);
+        locationRequest.setInterval(Constants.INTERVAL_IN_MS.UPDATE_LOCATION);
+        locationRequest.setFastestInterval(Constants.INTERVAL_IN_MS.FATEST_LOCATION);
     }
 
     @Override
@@ -459,14 +466,14 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
             case LocationSettingsStatusCodes.SUCCESS:
 
 
-                homePresenter.checkLocationPermission();
+                homePresenter.checkAndHandleLocationPermission();
 
                 break;
 
             case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
                 try {
 
-                    status.startResolutionForResult(HomeActivity.this, REQUEST_CHECK_SETTINGS);
+                    status.startResolutionForResult(HomeActivity.this, Constants.REQUEST_CODES.CHECK_GPS_PERMISSION);
 
                 } catch (IntentSender.SendIntentException e) {
 
@@ -483,16 +490,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CHECK_SETTINGS) {
-            if (resultCode == RESULT_OK) {
+        if (requestCode == Constants.REQUEST_CODES.CHECK_GPS_PERMISSION) {
 
-                homePresenter.checkLocationPermission();
-
-                Toast.makeText(getApplicationContext(), "GPS enabled", Toast.LENGTH_LONG).show();
-            } else {
-
-                Toast.makeText(getApplicationContext(), "GPS is not enabled", Toast.LENGTH_LONG).show();
-            }
+                homePresenter.handleGpsPermissionState(resultCode);
 
         }
     }

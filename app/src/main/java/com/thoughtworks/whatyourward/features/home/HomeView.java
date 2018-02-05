@@ -17,13 +17,17 @@ public interface HomeView extends MvpView {
 
     void showWardDetailsBottomSheet(Ward ward);
 
-    void checkLocationPermission();
+    void checkAndHandleLocationPermission();
 
     void getCurrentLocation();
 
     void showLocationPermissionError();
 
     void showWardDetailsNotFoundError();
+
+    void onGpsPermissionEnabled();
+
+    void onGpsPermissionDenied();
 
 //    void hideAnimationAndFinish();
 }

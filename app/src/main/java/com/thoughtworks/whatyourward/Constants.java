@@ -11,21 +11,10 @@ public class Constants {
 
     public static final String DATABASE_NAME =  "thoughtworks_db";
 
-    public static final int SPLASH_TIME_OUT = 2000;
-
 
     public static final String FONT_APP = "fonts/Montserrat-Regular.ttf";
 
 
-
-    public interface INTENT_KEY {
-        String PRODUCT_DETAILS = "Constants.INTENT_KEY.PRODUCT_DETAILS";
-
-        String PRODUCT = "Constants.INTENT_KEY.PRODUCT";
-
-        String IS_SPLASH_LAUNCH = "Constants.INTENT_KEY.IS_SPLASH_LAUNCH";
-
-    }
 
     public interface SHARED_PREF {
         String SCREEN_ID = "Constants.SHARED_PREF.SCREEN_ID";
@@ -33,19 +22,34 @@ public class Constants {
     }
 
 
-    public interface TOOLBAR {
-        String TITLE_PRODUCT_LIST = "Product List";
-        String TITLE_PRODUCT_DETAILS = "Product Details";
-        String TITLE_CART_LIST = "My Carts";
+
+    public interface DEFAULT{
+
+       int MAP_ZOOM = 13;
+
+    }
+
+    public interface REQUEST_CODES{
+
+        int CHECK_GPS_PERMISSION = 100;
+
+    }
+
+    public interface RESULT_CODES{
+
+        int SUCCESS = -1;
 
     }
 
 
-    public interface SCREENS {
-        int CART_LIST = 3;
-        int PRODUCT_LIST = 1;
-        int PRODUCT_DETAILS = 2;
+    public interface INTERVAL_IN_MS{
+
+        int UPDATE_LOCATION = 10000; // 10 sec
+        int FATEST_LOCATION = 5000; // 5 sec
+
+        int SPLASH_TIME_OUT = 2000;
 
     }
+
 
 }

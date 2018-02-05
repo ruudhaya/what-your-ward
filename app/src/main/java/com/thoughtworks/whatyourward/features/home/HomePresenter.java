@@ -2,11 +2,13 @@ package com.thoughtworks.whatyourward.features.home;
 
 import android.text.TextUtils;
 
+import com.thoughtworks.whatyourward.Constants;
 import com.thoughtworks.whatyourward.data.DataManager;
 import com.thoughtworks.whatyourward.data.model.ward.Ward;
 import com.thoughtworks.whatyourward.features.base.BasePresenter;
 import com.thoughtworks.whatyourward.injection.ConfigPersistent;
 import com.thoughtworks.whatyourward.interfaces.OnWardSuccess;
+import com.thoughtworks.whatyourward.util.StringUtil;
 
 import java.util.ArrayList;
 
@@ -64,15 +66,10 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
     }
 
-    public void showWardDetailsBottomSheet(Ward ward) {
 
+    public void checkAndHandleLocationPermission() {
 
-        getView().showWardDetailsBottomSheet(ward);
-    }
-
-    public void checkLocationPermission() {
-
-        getView().checkLocationPermission();
+        getView().checkAndHandleLocationPermission();
     }
 
     public void handleLocationPermission(boolean isGranted) {
@@ -80,32 +77,33 @@ public class HomePresenter extends BasePresenter<HomeView> {
         if(isGranted) {
             getView().getCurrentLocation();
         }else{
-
             getView().showLocationPermissionError();
         }
     }
 
     public void handleWardDetails(String wardNo, ArrayList<Ward> wardList) {
 
-        if(!TextUtils.isEmpty(wardNo)) {
+        if(!StringUtil.isEmpty(wardNo)) {
             for (Ward ward : wardList) {
-
                 if (ward != null && wardNo.equalsIgnoreCase(ward.getWardNo())) {
-
                     getView().showWardDetailsBottomSheet(ward);
                 }else{
-
                     getView().showWardDetailsNotFoundError();
                 }
             }
-
         }
     }
 
+    public void handleGpsPermissionState(int resultCode) {
 
-//    public void stopAnimationAndFinish(){
-//
-//        getView().hideAnimationAndFinish();
-//
-//    }
+        if (resultCode == Constants.RESULT_CODES.SUCCESS) {
+
+            getView().onGpsPermissionEnabled();
+
+        }else {
+
+            getView().onGpsPermissionDenied();
+        }
+
+    }
 }
