@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -46,6 +47,7 @@ import com.thoughtworks.whatyourward.util.IntentUtil;
 import com.thoughtworks.whatyourward.util.KmlUtil;
 import com.thoughtworks.whatyourward.util.NetworkUtil;
 import com.thoughtworks.whatyourward.util.ParseUtil;
+import com.thoughtworks.whatyourward.util.StringUtil;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -286,7 +288,20 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         LinearLayout llWhatsappGroup = view.findViewById(R.id.ll_whatsapp_group);
 
 
-        setWardDetailsText(ward, zoneInfo, txtZoneName, txtZoneAddress, txtZoneNumber, txtZoneMobile, txtWardName, txtWardAddress, txtWardId, txtWardMobile, txtWardEmail);
+
+        setText(getString(R.string.text_ward_name_hint),ward.getWardName(), txtWardName);
+        setText(getString(R.string.text_ward_address_hint),ward.getWardOfficeAddress(), txtWardAddress);
+        setText("",ward.getWardNo(), txtWardId);
+        setText(getString(R.string.text_zone_name_hint), zoneInfo.getZoneName(), txtZoneName);
+        setText("",zoneInfo.getZoneNo(), txtZoneNumber);
+        setText(getString(R.string.text_zone_address_hint), zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
+
+        setContactDetails(zoneInfo.getZonalOfficePhone(), txtZoneMobile);
+
+        setContactDetails(ward.getWardOfficePhone(), txtWardMobile);
+
+        setEmailDetails(ward.getWardOfficeEmail(), txtWardEmail);
+
 
         llWhatsappGroup.setOnClickListener(v -> IntentUtil.joinWhatsappGroup(HomeActivity.this, ward.getWardWhatsappGroupLink()));
 
@@ -305,17 +320,36 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     }
 
-    private void setWardDetailsText(Ward ward, ZoneInfo zoneInfo, TextView txtZoneName, TextView txtZoneAddress, TextView txtZoneNumber, TextView txtZoneMobile, TextView txtWardName, TextView txtWardAddress, TextView txtWardId, TextView txtWardMobile, TextView txtWardEmail) {
-        setText(getString(R.string.text_ward_name_hint),ward.getWardName(), txtWardName);
-        setText(getString(R.string.text_ward_address_hint),ward.getWardOfficeAddress(), txtWardAddress);
-        setText("",ward.getWardNo(), txtWardId);
-        setText(getString(R.string.text_ward_contact_hint) , ward.getWardOfficePhone(), txtWardMobile);
-        setText(getString(R.string.text_ward_email_hint), ward.getWardOfficeEmail(), txtWardEmail);
-        setText(getString(R.string.text_zone_name_hint), zoneInfo.getZoneName(), txtZoneName);
-        setText("",zoneInfo.getZoneNo(), txtZoneNumber);
-        setText(getString(R.string.text_zone_address_hint), zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
-        setText(getString(R.string.text_zone_contact_hint), zoneInfo.getZonalOfficePhone(), txtZoneMobile);
+
+
+    private void setContactDetails(String number, TextView textView) {
+
+
+        if(!StringUtil.isEmpty(number)){
+            textView.setText(number);
+        }else{
+            textView.setText("No contacts found");
+        }
+
+        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(this,R.drawable.ic_phone), null, null, null);
+
     }
+
+
+    private void setEmailDetails(String email, TextView textView) {
+
+
+        if(!StringUtil.isEmpty(email)){
+
+            textView.setText(email);
+        }else{
+            textView.setText("No email found");
+        }
+
+        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(this,R.drawable.ic_email_variant), null, null, null);
+
+    }
+
 
     @Override
     public void getCurrentLocation() {
