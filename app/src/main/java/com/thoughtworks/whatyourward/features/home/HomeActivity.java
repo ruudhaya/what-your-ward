@@ -99,7 +99,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
 
-    private static String ATTRIBUTE_KML_NAME = "name";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,7 +153,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
             try {
 
-                homePresenter.stopAnimation();
+                homePresenter.stopLoadingAnimation();
 
                 Timber.i("Kml loading");
 
@@ -162,13 +161,11 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 kmlLayer.addLayerToMap();
 
                 Timber.i("Kml loaded");
-                //            homePresenter.stopAnimation();
-
 
             } catch (XmlPullParserException | IOException e) {
                 e.printStackTrace();
             }
-        },5000);
+        },Constants.INTERVAL_IN_MS.KML_LOADING);
 
 
 
@@ -181,7 +178,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
         initGoogleApiClient();
 
-        homePresenter.startAnimation();
+        homePresenter.startLoadingAnimation();
 
         initGoogleMaps();
 
@@ -198,7 +195,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
     @Override
-    public void checkAndHandleLocationPermission() {
+    public void onLocationPermission() {
 
         rxPermissions = new RxPermissions(HomeActivity.this); // where this is an Activity instance
 
@@ -222,7 +219,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
     @Override
-    public void showAnimation() {
+    public void showLoadingAnimation() {
 
         viewLoading.setVisibility(View.VISIBLE);
         imgMapMarker.setVisibility(View.GONE);
@@ -244,7 +241,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
     @Override
-    public void hideAnimation() {
+    public void hideLoadingAnimation() {
 
         loadingAnimationDrawable.stop();
 
@@ -392,7 +389,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     private String getWardNum(LatLng latLng) {
         KmlPlacemark kmlPlacemark = KmlUtil.containsInAnyPolygon(kmlLayer, latLng);
         if (kmlPlacemark != null) {
-            String wardName = kmlPlacemark.getProperty(ATTRIBUTE_KML_NAME);
+            String wardName = kmlPlacemark.getProperty(Constants.ATTRIBUTE.KML_NAME);
             String wardNo = ParseUtil.getWardNum(wardName);
             return wardNo;
         }

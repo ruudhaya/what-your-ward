@@ -27,7 +27,6 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
     @Override
     public void attachView(HomeView mvpView) {
-
         super.attachView(mvpView);
 
 
@@ -41,33 +40,25 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
     public void loadWard() {
 
-        dataManager.loadWard(new OnWardSuccess() {
-            @Override
-            public void onWardList(ArrayList<Ward> wardList) {
-
-
-                getView().showCategoryList(wardList);
-
-            }
-        });
+        dataManager.loadWard(wardList -> getView().showCategoryList(wardList));
     }
 
-    public void startAnimation() {
+    public void startLoadingAnimation() {
 
-        getView().showAnimation();
+        getView().showLoadingAnimation();
     }
 
 
-    public void stopAnimation() {
+    public void stopLoadingAnimation() {
 
-        getView().hideAnimation();
+        getView().hideLoadingAnimation();
 
     }
 
 
     public void checkAndHandleLocationPermission() {
 
-        getView().checkAndHandleLocationPermission();
+        getView().onLocationPermission();
     }
 
     public void handleLocationPermission(boolean isGranted) {

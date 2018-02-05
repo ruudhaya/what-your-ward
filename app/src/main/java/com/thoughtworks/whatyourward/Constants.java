@@ -42,12 +42,19 @@ public class Constants {
     }
 
 
+    public interface ATTRIBUTE{
+
+        String KML_NAME = "name";
+
+    }
     public interface INTERVAL_IN_MS{
 
         int UPDATE_LOCATION = 10000; // 10 sec
         int FATEST_LOCATION = 5000; // 5 sec
 
         int SPLASH_TIME_OUT = 2000;
+
+        int KML_LOADING = 5000;
 
     }
 

@@ -11,13 +11,13 @@ public interface HomeView extends MvpView {
 
     void showCategoryList(ArrayList<Ward> wardArrayList);
 
-    void showAnimation();
+    void showLoadingAnimation();
 
-    void hideAnimation();
+    void hideLoadingAnimation();
 
     void showWardDetailsBottomSheet(Ward ward);
 
-    void checkAndHandleLocationPermission();
+    void onLocationPermission();
 
     void getCurrentLocation();
 
