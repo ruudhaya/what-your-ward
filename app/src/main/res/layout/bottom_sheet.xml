@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:lineSpacingExtra="5dp"
-                    android:text="ZONAL OFFICE ADDRESS \nNo:115, DDR Muthulakshmi \nSalai, CHENNAI, 600020"
+                    tools:text="ZONAL OFFICE ADDRESS \nNo:115, DDR Muthulakshmi \nSalai, CHENNAI, 600020"
                     android:textSize="20sp"
                     android:textColor="@color/secondary_text"/>
 
@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:lineSpacingExtra="5dp"
-                    android:text="WARD OFFICE ADDRESS \nNo:115, DDR Muthulakshmi \nSalai, CHENNAI, 600020"
+                    tools:text="WARD OFFICE ADDRESS \nNo:115, DDR Muthulakshmi \nSalai, CHENNAI, 600020"
                     android:textSize="20sp"
                     android:textColor="@color/secondary_text"/>
 
@@ -179,7 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="JOIN WARD GROUP"
+                android:text="@string/join_ward_group"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
         </LinearLayout>

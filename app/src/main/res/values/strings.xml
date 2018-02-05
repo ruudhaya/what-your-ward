@@ -48,6 +48,10 @@
     <string name="permission_success_gps">GPS enabled</string>
     <string name="permission_error_gps">Please turn on the GPS to serve you better!</string>
     <string name="permission_error_airplane">Please turn off the Airplane mode to use the app</string>
+    <string name="join_ward_group">JOIN WARD GROUP</string>
+    <string name="loading_location">GETTING YOUR LOCATION</string>
+    <string name="btn_next">Next</string>
+    <string name="map_confirm_location">CONFIRM YOUR LOCATION, ADJUST IF REQUIRED</string>
 
 
 </resources>
