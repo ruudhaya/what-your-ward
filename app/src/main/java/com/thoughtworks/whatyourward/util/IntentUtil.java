@@ -13,21 +13,37 @@ public class IntentUtil {
 
     public static void makeCallWard(Context context,String contactNum) {
 
-        if (contactNum.contains("/"))
-            contactNum = contactNum.split("/")[0].trim();
+        if(!StringUtil.isEmpty(contactNum)) {
+            if (contactNum.contains("/"))
+                contactNum = contactNum.split("/")[0].trim();
 
-        openNumberInDial(context,contactNum);
+            openNumberInDial(context, contactNum);
+        }
     }
 
 
     public static void makeCallZone(Context context,String contactNum) {
+        if(!StringUtil.isEmpty(contactNum)) {
 
-        if (contactNum.contains("/"))
-            contactNum = contactNum.split("/")[0].trim();
+            if (contactNum.contains("/"))
+                contactNum = contactNum.split("/")[0].trim();
 
 
-        openNumberInDial(context,contactNum);
+            openNumberInDial(context, contactNum);
+        }
     }
+
+
+    public static void sendEmail(Context context,String email) {
+        if(!StringUtil.isEmpty(email)) {
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+            emailIntent.setData(Uri.parse("mailto:"+email));
+            context.startActivity(emailIntent);
+
+        }
+    }
+
+
 
     private static void openNumberInDial(Context context,String number) {
         Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -38,11 +54,14 @@ public class IntentUtil {
 
     public static void joinWhatsappGroup(Context context,String linkText) {
 
-        if (!linkText.startsWith("http://") && !linkText.startsWith("https://"))
-            linkText = "http://" + linkText;
+        if(!StringUtil.isEmpty(linkText)) {
 
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkText));
-        context.startActivity(browserIntent);
+            if (!linkText.startsWith("http://") && !linkText.startsWith("https://"))
+                linkText = "http://" + linkText;
 
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkText));
+            context.startActivity(browserIntent);
+
+        }
     }
 }
