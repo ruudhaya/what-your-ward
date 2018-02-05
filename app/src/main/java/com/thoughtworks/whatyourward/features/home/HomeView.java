@@ -31,5 +31,7 @@ public interface HomeView extends MvpView {
 
     void onNextButtonClicked();
 
+    void closeScreen();
+
 //    void hideAnimationAndFinish();
 }

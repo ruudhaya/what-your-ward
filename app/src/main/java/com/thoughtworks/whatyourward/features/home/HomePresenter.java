@@ -97,4 +97,11 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
         getView().onNextButtonClicked();
     }
+
+    public void closeScreen(){
+
+        getView().closeScreen();
+    }
+
+
 }

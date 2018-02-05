@@ -11,9 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcdfa630-20a9-457e-a8d7-96d2d542250a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomePresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomePresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,28 +23,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="HomeView.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="364">
-                    <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsData">
@@ -59,14 +39,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="376" column="35" lean-forward="false" selection-start-line="376" selection-start-column="35" selection-end-line="376" selection-end-column="35" />
+            <state relative-caret-position="187">
+              <caret line="368" column="8" lean-forward="false" selection-start-line="368" selection-start-column="8" selection-end-line="368" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/util/Util.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Toast.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/widget/Toast.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="265" column="24" lean-forward="false" selection-start-line="265" selection-start-column="24" selection-end-line="265" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bottom_sheet.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomePresenter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomePresenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomePresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+            <state relative-caret-position="263">
+              <caret line="90" column="28" lean-forward="false" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,22 +119,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SplashScreenActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenActivity.java">
+      <file leaf-file-name="HomeView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="383">
+              <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,28 +137,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="135" column="20" lean-forward="false" selection-start-line="130" selection-start-column="15" selection-end-line="135" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dimens.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="70">
+              <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -182,8 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ward</find>
-      <find>hideAnimation</find>
       <find>stopAni</find>
       <find>updateLocation</find>
       <find>requestLocationPermission</find>
@@ -211,7 +194,9 @@
       <find>rxJava</find>
       <find>rxPer</find>
       <find>guide_bottom</find>
+      <find>startLoadingAnimation</find>
       <find>guide_top</find>
+      <find>closeSc</find>
     </findStrings>
     <replaceStrings>
       <replace>Ward</replace>
@@ -2203,18 +2188,18 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/loading_map_animation_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_location_focus.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/util/IntentUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/util/StringUtil.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/dependencies.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomePresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java" />
       </list>
     </option>
   </component>
@@ -2632,7 +2617,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517813255886" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517815155794" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2680,7 +2665,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517813255886" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517815155794" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2863,7 +2848,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517813255887" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517815155795" />
       </method>
     </configuration>
     <list size="1">
@@ -2913,7 +2898,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38826814" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31616595" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22486034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3011,25 +2996,25 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>337</line>
+          <line>336</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>329</line>
+          <line>328</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>472</line>
+          <line>483</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>431</line>
+          <line>442</line>
           <properties />
           <option name="timeStamp" value="35" />
         </line-breakpoint>
@@ -3048,20 +3033,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.patloew.rxlocation/rxlocation/1.0.4/f661dc2a866c6ab78453dd05cce75027b4c39827/rxlocation-1.0.4-sources.jar!/com/patloew/rxlocation/FusedLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-219">
-          <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/data/model/ward/ZoneInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/util/KmlUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -3134,6 +3105,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="24" column="53" lean-forward="false" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3234,17 +3206,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/MapsActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="106" column="34" lean-forward="false" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3414,31 +3375,37 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/widget/Toast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="265" column="24" lean-forward="false" selection-start-line="265" selection-start-column="24" selection-end-line="265" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/util/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bottom_sheet.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="135" column="20" lean-forward="false" selection-start-line="130" selection-start-column="15" selection-end-line="135" selection-end-column="20" />
+        <state relative-caret-position="165">
+          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="376" column="35" lean-forward="false" selection-start-line="376" selection-start-column="35" selection-end-line="376" selection-end-column="35" />
+        <state relative-caret-position="383">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3447,8 +3414,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomePresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state relative-caret-position="263">
+          <caret line="90" column="28" lean-forward="false" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="368" column="8" lean-forward="false" selection-start-line="368" selection-start-column="8" selection-end-line="368" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

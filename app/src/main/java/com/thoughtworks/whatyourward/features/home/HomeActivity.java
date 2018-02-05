@@ -175,10 +175,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void onViewReady() {
 
+        homePresenter.startLoadingAnimation();
 
         initGoogleApiClient();
-
-        homePresenter.startLoadingAnimation();
 
         initGoogleMaps();
 
@@ -345,6 +344,10 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         Toast.makeText(HomeActivity.this,
                 "Sorry! Map cannot be loaded. Please enable the location permission",
                 Toast.LENGTH_SHORT).show();
+
+        homePresenter.stopLoadingAnimation();
+
+        homePresenter.closeScreen();
     }
 
     @Override
@@ -364,7 +367,13 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void showGpsPermissionError() {
 
-        Toast.makeText(getApplicationContext(), "GPS is not enabled", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Please turn on the GPS to serve you better!", Toast.LENGTH_LONG).show();
+
+        homePresenter.stopLoadingAnimation();
+
+        homePresenter.closeScreen();
+
+
 
     }
 
@@ -375,6 +384,12 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         String wardNo = getWardNum(centerLatLngPosition);
 
         homePresenter.handleWardDetails(wardNo, mWardArrayList);
+    }
+
+    @Override
+    public void closeScreen() {
+
+        finish();
     }
 
 
