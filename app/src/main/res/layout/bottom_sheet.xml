@@ -43,7 +43,8 @@
                     android:layout_weight="1"
                     android:lineSpacingExtra="5dp"
                     android:text="ZONAL OFFICE ADDRESS \nNo:115, DDR Muthulakshmi \nSalai, CHENNAI, 600020"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/secondary_text"/>
 
 
                 <TextView
@@ -108,7 +109,8 @@
                     android:layout_weight="1"
                     android:lineSpacingExtra="5dp"
                     android:text="WARD OFFICE ADDRESS \nNo:115, DDR Muthulakshmi \nSalai, CHENNAI, 600020"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/secondary_text"/>
 
 
                 <TextView
