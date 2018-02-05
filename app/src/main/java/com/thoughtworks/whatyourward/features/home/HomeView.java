@@ -17,5 +17,11 @@ public interface HomeView extends MvpView {
 
     void showWardDetailsBottomSheet(Ward ward);
 
+    void checkLocationPermission();
+
+    void getCurrentLocation();
+
+    void showLocationPermissionError();
+
 //    void hideAnimationAndFinish();
 }

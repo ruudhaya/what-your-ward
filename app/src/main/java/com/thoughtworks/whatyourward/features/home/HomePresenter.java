@@ -1,8 +1,5 @@
 package com.thoughtworks.whatyourward.features.home;
 
-import android.util.Log;
-
-import com.google.android.gms.location.LocationRequest;
 import com.thoughtworks.whatyourward.data.DataManager;
 import com.thoughtworks.whatyourward.data.model.ward.Ward;
 import com.thoughtworks.whatyourward.features.base.BasePresenter;
@@ -12,9 +9,6 @@ import com.thoughtworks.whatyourward.interfaces.OnWardSuccess;
 import java.util.ArrayList;
 
 import javax.inject.Inject;
-
-import io.reactivex.disposables.CompositeDisposable;
-import timber.log.Timber;
 
 @ConfigPersistent
 public class HomePresenter extends BasePresenter<HomeView> {
@@ -72,6 +66,21 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
 
         getView().showWardDetailsBottomSheet(ward);
+    }
+
+    public void checkLocationPermission() {
+
+        getView().checkLocationPermission();
+    }
+
+    public void handleLocationPermission(boolean isGranted) {
+
+        if(isGranted) {
+            getView().getCurrentLocation();
+        }else{
+
+            getView().showLocationPermissionError();
+        }
     }
 
 

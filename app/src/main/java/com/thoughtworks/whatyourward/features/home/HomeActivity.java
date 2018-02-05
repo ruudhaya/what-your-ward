@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.graphics.drawable.AnimationDrawable;
 import android.location.Location;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -22,9 +21,7 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.ResultCallbacks;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -57,9 +54,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 
@@ -71,7 +65,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Inject
     HomePresenter homePresenter;
 
-    private static final int defaultZoom = 13;
 
 
     @BindView(R.id.btn_next)
@@ -93,7 +86,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     private RxPermissions rxPermissions;
 
 
-    private LatLng latLng;
     private SupportMapFragment mapFragment;
 
     private GoogleMap mGoogleMap;
@@ -103,13 +95,14 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     protected GoogleApiClient mGoogleApiClient;
     protected LocationRequest locationRequest;
+
+
     private int REQUEST_CHECK_SETTINGS = 100;
 
-
-    // Location updates intervals in sec
     private static int UPDATE_INTERVAL = 10000; // 10 sec
     private static int FATEST_INTERVAL = 5000; // 5 sec
-    private Location location;
+
+    private static final int defaultZoom = 13;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,33 +143,16 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
         mGoogleMap = googleMap;
 
-
         Timber.i("on Map ready called");
-
 
 
     }
 
 
-    private void setDefaultConfig() {
+    private void setDefaultConfig(Location location) {
 
-        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, defaultZoom));
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), defaultZoom));
         mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
-
-
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
-//                PackageManager.PERMISSION_GRANTED &&
-//                ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) ==
-//                        PackageManager.PERMISSION_GRANTED) {
-//            googleMap.setMyLocationEnabled(true);
-//            googleMap.getUiSettings().setMyLocationButtonEnabled(true);
-//        } else {
-//            // reload activity
-//            ActivityCompat.requestPermissions(this, new String[]{
-//                    Manifest.permission.ACCESS_FINE_LOCATION,
-//                    Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-//        }
-
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -223,30 +199,22 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
-
         mapFragment.getMapAsync(this);
     }
 
-    private void requestLocationPermission() {
+    @Override
+    public void checkLocationPermission() {
 
         rxPermissions = new RxPermissions(HomeActivity.this); // where this is an Activity instance
 
         rxPermissions
                 .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 .subscribe(granted -> {
-                    if (granted) {
 
 
-                        Timber.i("Location enabled success");
 
-                        updateLocation();
+                        homePresenter.handleLocationPermission(granted);
 
-                    } else {
-
-                        Toast.makeText(HomeActivity.this,
-                                "Sorry! Map cannot be loaded. Please enable the location permission",
-                                Toast.LENGTH_SHORT).show();
-                    }
                 });
     }
 
@@ -304,7 +272,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 Ward ward = getWardDetails();
 
                 if(ward != null) {
-                    showWardDetailsBottomSheet(ward);
+
+                    homePresenter.showWardDetailsBottomSheet(ward);
                 }else{
                     Toast.makeText(this, "No ward details found for this area", Toast.LENGTH_SHORT).show();
                 }
@@ -357,25 +326,22 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         dialog.show();
 
     }
-    public void updateLocation() {
+
+    @Override
+    public void getCurrentLocation() {
+
+        Timber.i("Location enabled success");
 
         Timber.i("onLocation Updated called");
 
-        location = LocationServices.FusedLocationApi
+        Location location = LocationServices.FusedLocationApi
                 .getLastLocation(mGoogleApiClient);
 
         if (location != null) {
 
-            latLng = new LatLng(location.getLatitude(), location.getLongitude());
-
-
             Timber.i("Lat lng inside onLocationUpdated");
-            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
-
-//            mapFragment.getMapAsync(this);
-
-            setDefaultConfig();
+            setDefaultConfig(location);
 
             Timber.i("getMapAsync() called in onLocationUpdated");
 
@@ -391,10 +357,18 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     }
 
+    @Override
+    public void showLocationPermissionError() {
+        Toast.makeText(HomeActivity.this,
+                "Sorry! Map cannot be loaded. Please enable the location permission",
+                Toast.LENGTH_SHORT).show();
+    }
+
 
     public LatLng getCenterOfMap() {
         if (mGoogleMap != null)
             return mGoogleMap.getCameraPosition().target;
+
         return new LatLng(120.0, 80.0);
     }
 
@@ -494,21 +468,17 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
             case LocationSettingsStatusCodes.SUCCESS:
 
 
-                requestLocationPermission();
+                homePresenter.checkLocationPermission();
 
                 break;
 
             case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
-                //  GPS disabled show the user a dialog to turn it on
                 try {
-                    // Show the dialog by calling startResolutionForResult(), and check the result
-                    // in onActivityResult().
 
                     status.startResolutionForResult(HomeActivity.this, REQUEST_CHECK_SETTINGS);
 
                 } catch (IntentSender.SendIntentException e) {
 
-                    //failed to show dialog
                 }
                 break;
 
@@ -525,8 +495,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         if (requestCode == REQUEST_CHECK_SETTINGS) {
             if (resultCode == RESULT_OK) {
 
-
-                requestLocationPermission();
+                homePresenter.checkLocationPermission();
 
                 Toast.makeText(getApplicationContext(), "GPS enabled", Toast.LENGTH_LONG).show();
             } else {
