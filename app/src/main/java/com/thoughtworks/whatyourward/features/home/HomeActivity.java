@@ -261,12 +261,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 break;
             case R.id.btn_next:
 
+                homePresenter.clickNextButton();
 
-                LatLng centerLatLngPosition = getMapCenterPosition();
 
-                String wardNo = getWardNum(centerLatLngPosition);
-
-                homePresenter.handleWardDetails(wardNo, mWardArrayList);
 
                 break;
         }
@@ -344,11 +341,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
             mGoogleApiClient.connect();
         }
 
-
-
-
-
-
     }
 
     @Override
@@ -373,10 +365,19 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
     @Override
-    public void onGpsPermissionDenied() {
+    public void showGpsPermissionError() {
 
         Toast.makeText(getApplicationContext(), "GPS is not enabled", Toast.LENGTH_LONG).show();
 
+    }
+
+    @Override
+    public void onNextButtonClicked() {
+        LatLng centerLatLngPosition = getMapCenterPosition();
+
+        String wardNo = getWardNum(centerLatLngPosition);
+
+        homePresenter.handleWardDetails(wardNo, mWardArrayList);
     }
 
 
@@ -421,7 +422,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this).build();
         mGoogleApiClient.connect();
-
 
         locationRequest = LocationRequest.create();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -491,9 +491,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Constants.REQUEST_CODES.CHECK_GPS_PERMISSION) {
-
                 homePresenter.handleGpsPermissionState(resultCode);
-
         }
     }
 

@@ -27,7 +27,9 @@ public interface HomeView extends MvpView {
 
     void onGpsPermissionEnabled();
 
-    void onGpsPermissionDenied();
+    void showGpsPermissionError();
+
+    void onNextButtonClicked();
 
 //    void hideAnimationAndFinish();
 }

@@ -1,7 +1,5 @@
 package com.thoughtworks.whatyourward.features.home;
 
-import android.text.TextUtils;
-
 import com.thoughtworks.whatyourward.Constants;
 import com.thoughtworks.whatyourward.data.DataManager;
 import com.thoughtworks.whatyourward.data.model.ward.Ward;
@@ -102,8 +100,13 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
         }else {
 
-            getView().onGpsPermissionDenied();
+            getView().showGpsPermissionError();
         }
 
+    }
+
+    public void clickNextButton() {
+
+        getView().onNextButtonClicked();
     }
 }
