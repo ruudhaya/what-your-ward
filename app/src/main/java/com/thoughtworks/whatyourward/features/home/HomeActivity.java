@@ -64,11 +64,10 @@ import timber.log.Timber;
 public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCallback
         , GoogleApiClient.OnConnectionFailedListener
         , GoogleApiClient.ConnectionCallbacks
-            ,ResultCallback<LocationSettingsResult>{
+        , ResultCallback<LocationSettingsResult> {
 
     @Inject
     HomePresenter homePresenter;
-
 
 
     @BindView(R.id.btn_next)
@@ -151,8 +150,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), Constants.DEFAULT.MAP_ZOOM));
         mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
 
-        handler =  new Handler();
-        
+        handler = new Handler();
+
         handler.postDelayed(() -> {
 
             try {
@@ -169,8 +168,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
             } catch (XmlPullParserException | IOException e) {
                 e.printStackTrace();
             }
-        },Constants.INTERVAL_IN_MS.KML_LOADING);
-
+        }, Constants.INTERVAL_IN_MS.KML_LOADING);
 
 
     }
@@ -189,7 +187,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
 
-
     private void initGoogleMaps() {
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -206,19 +203,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 .subscribe(granted -> {
 
-                    if(NetworkUtil.isNetworkConnected(this)) {
-                        homePresenter.handleLocationPermission(granted);
-
-                    }else{
-
-                        Toast.makeText(HomeActivity.this,
-                                R.string.error_no_internet,
-                                Toast.LENGTH_SHORT).show();
-
-                        homePresenter.stopLoadingAnimation();
-
-                        homePresenter.closeScreen();
-                    }
+                    homePresenter.handleLocationPermission(granted);
 
 
                 });
@@ -240,17 +225,11 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         imgMapMarker.setVisibility(View.GONE);
         llFooter.setVisibility(View.GONE);
 
-         loadingAnimationDrawable
-                = (AnimationDrawable)imgLoading.getDrawable();
+        loadingAnimationDrawable
+                = (AnimationDrawable) imgLoading.getDrawable();
 
         imgLoading.post(
-                new Runnable(){
-
-                    @Override
-                    public void run() {
-                        loadingAnimationDrawable.start();
-                    }
-                });
+                () -> loadingAnimationDrawable.start());
 
 
     }
@@ -281,7 +260,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
     @Override
-    public void showWardDetailsBottomSheet(Ward ward){
+    public void showWardDetailsBottomSheet(Ward ward) {
 
         ZoneInfo zoneInfo = ward.getZoneInfo();
 
@@ -299,12 +278,11 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         LinearLayout llWhatsappGroup = view.findViewById(R.id.ll_whatsapp_group);
 
 
-
-        setText(getString(R.string.text_ward_name_hint),ward.getWardName(), txtWardName);
-        setText(getString(R.string.text_ward_address_hint),ward.getWardOfficeAddress(), txtWardAddress);
-        setText("",ward.getWardNo(), txtWardId);
+        setText(getString(R.string.text_ward_name_hint), ward.getWardName(), txtWardName);
+        setText(getString(R.string.text_ward_address_hint), ward.getWardOfficeAddress(), txtWardAddress);
+        setText("", ward.getWardNo(), txtWardId);
         setText(getString(R.string.text_zone_name_hint), zoneInfo.getZoneName(), txtZoneName);
-        setText("",zoneInfo.getZoneNo(), txtZoneNumber);
+        setText("", zoneInfo.getZoneNo(), txtZoneNumber);
         setText(getString(R.string.text_zone_address_hint), zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
 
         setContactDetails(zoneInfo.getZonalOfficePhone(), txtZoneMobile);
@@ -332,17 +310,16 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
 
-
     private void setContactDetails(String number, TextView textView) {
 
 
-        if(!StringUtil.isEmpty(number)){
+        if (!StringUtil.isEmpty(number)) {
             textView.setText(number);
-        }else{
+        } else {
             textView.setText(R.string.info_no_contact);
         }
 
-        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(this,R.drawable.ic_phone), null, null, null);
+        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.ic_phone), null, null, null);
 
     }
 
@@ -350,13 +327,13 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     private void setEmailDetails(String email, TextView textView) {
 
 
-        if(!StringUtil.isEmpty(email)){
+        if (!StringUtil.isEmpty(email)) {
             textView.setText(email);
-        }else{
+        } else {
             textView.setText(R.string.info_no_email);
         }
 
-        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(this,R.drawable.ic_email_variant), null, null, null);
+        textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.ic_email_variant), null, null, null);
 
     }
 
@@ -424,7 +401,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         homePresenter.closeScreen();
 
 
-
     }
 
     @Override
@@ -473,8 +449,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
 
-
-
     private void setText(String appendText, String text, TextView textView) {
 
         if (TextUtils.isEmpty(text)) {
@@ -486,9 +460,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
 
-
-
-    private void initGoogleApiClient(){
+    private void initGoogleApiClient() {
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addApi(LocationServices.API)
@@ -505,7 +477,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void onConnected(@Nullable Bundle bundle) {
 
-        if(!NetworkUtil.isAirplaneModeOn(HomeActivity.this)) {
+        if (!NetworkUtil.isAirplaneModeOn(HomeActivity.this)) {
 
             LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                     .addLocationRequest(locationRequest);
@@ -517,7 +489,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                     );
             result.setResultCallback(this);
 
-        }else{
+        } else {
 
             homePresenter.handleAirplaneModeOnState();
         }
@@ -572,7 +544,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Constants.REQUEST_CODES.CHECK_GPS_PERMISSION) {
-                homePresenter.handleGpsPermissionState(resultCode);
+            homePresenter.handleGpsPermissionState(resultCode);
         }
     }
 
@@ -598,7 +570,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void onBackPressed() {
 
-        if(handler != null) {
+        if (handler != null) {
             handler.removeCallbacksAndMessages(null);
         }
         super.onBackPressed();
