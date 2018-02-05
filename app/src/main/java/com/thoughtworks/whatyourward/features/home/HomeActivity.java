@@ -217,7 +217,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     public void showCategoryList(ArrayList<Ward> wardArrayList) {
 
         mWardArrayList = wardArrayList;
-        Timber.i("loaded size " + wardArrayList.size());
 
 
     }
@@ -328,7 +327,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         if(!StringUtil.isEmpty(number)){
             textView.setText(number);
         }else{
-            textView.setText("No contacts found");
+            textView.setText(R.string.info_no_contact);
         }
 
         textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(this,R.drawable.ic_phone), null, null, null);
@@ -340,10 +339,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
         if(!StringUtil.isEmpty(email)){
-
             textView.setText(email);
         }else{
-            textView.setText("No email found");
+            textView.setText(R.string.info_no_email);
         }
 
         textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(this,R.drawable.ic_email_variant), null, null, null);
@@ -379,7 +377,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void showLocationPermissionError() {
         Toast.makeText(HomeActivity.this,
-                "Sorry! Map cannot be loaded. Please enable the location permission",
+                R.string.permission_error_location,
                 Toast.LENGTH_SHORT).show();
 
         homePresenter.stopLoadingAnimation();
@@ -389,13 +387,13 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     @Override
     public void showWardDetailsNotFoundError() {
-        Toast.makeText(this, "No ward details found for this area", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.error_no_ward_details, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onGpsPermissionEnabled() {
 
-        Toast.makeText(getApplicationContext(), "GPS enabled", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), R.string.permission_success_gps, Toast.LENGTH_LONG).show();
 
         homePresenter.checkAndHandleLocationPermission();
 
@@ -404,7 +402,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void showGpsPermissionError() {
 
-        Toast.makeText(getApplicationContext(), "Please turn on the GPS to serve you better!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), R.string.permission_error_gps, Toast.LENGTH_LONG).show();
 
         homePresenter.stopLoadingAnimation();
 
@@ -432,7 +430,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     @Override
     public void showAirplaneModeIsOnError() {
 
-        Toast.makeText(getApplicationContext(), "Please turn off the Airplane mode to use the app", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), R.string.permission_error_airplane, Toast.LENGTH_LONG).show();
 
         homePresenter.stopLoadingAnimation();
 

@@ -40,6 +40,13 @@
     <string name="text_zone_name_hint">ZONE:\u0020</string>
     <string name="text_zone_address_hint">ZONAL OFFICE ADDRESS \n</string>
     <string name="text_zone_contact_hint">CONTACT:\u0020</string>
+    <string name="info_no_contact">No contacts found</string>
+    <string name="info_no_email">No email found</string>
+    <string name="permission_error_location">Sorry! Map cannot be loaded. Please enable the location permission</string>
+    <string name="error_no_ward_details">No ward details found for this area</string>
+    <string name="permission_success_gps">GPS enabled</string>
+    <string name="permission_error_gps">Please turn on the GPS to serve you better!</string>
+    <string name="permission_error_airplane">Please turn off the Airplane mode to use the app</string>
 
 
 </resources>
