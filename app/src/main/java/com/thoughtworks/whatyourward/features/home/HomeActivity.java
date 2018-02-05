@@ -73,7 +73,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     private static final int defaultZoom = 13;
 
-//    private static LatLng currentLocation = new LatLng(13.0827, 80.2707);
 
     @BindView(R.id.btn_next)
     Button btnNext;
@@ -116,20 +115,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         super.onCreate(savedInstanceState);
 
 
-        initGoogleApiClient();
+        homePresenter.onViewReady();
 
-        homePresenter.startAnimation();
-
-        mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-
-
-
-        mapFragment.getMapAsync(this);
-
-
-
-        homePresenter.loadWard();
     }
 
     @Override
@@ -223,6 +210,21 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     public void onViewReady() {
 
 
+        initGoogleApiClient();
+
+        homePresenter.startAnimation();
+
+        initGoogleMaps();
+
+        homePresenter.loadWard();
+    }
+
+    private void initGoogleMaps() {
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+
+
+        mapFragment.getMapAsync(this);
     }
 
     private void requestLocationPermission() {
@@ -510,9 +512,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         final Status status = result.getStatus();
         switch (status.getStatusCode()) {
             case LocationSettingsStatusCodes.SUCCESS:
-                // NO need to show the dialog;
 
-//                updateLocation();
 
                 requestLocationPermission();
 
