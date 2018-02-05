@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GETTING YOUR LOCATION"
+            android:text="@string/loading_location"
             android:gravity="center"
             android:textSize="24sp"
             android:layout_marginTop="16dp"/>
@@ -112,7 +112,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="6"
-            android:text="CONFIRM YOUR LOCATION, ADJUST IF REQUIRED"
+            android:text="@string/map_confirm_location"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -127,19 +127,13 @@
             android:minHeight="0dp"
             android:paddingBottom="6dp"
             android:paddingTop="6dp"
-            android:text="Next"
+            android:text="@string/btn_next"
             android:textColor="@color/white"
             android:textSize="22sp"
             fontPath="@string/fonts_dosis_semi_bold"/>
     </LinearLayout>
 
 
-    <!--<android.support.constraint.Guideline-->
-        <!--android:id="@+id/guide_top"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--app:layout_constraintGuide_percent="0.12" />-->
 
 
 
