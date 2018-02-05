@@ -3,13 +3,14 @@ ext {
             constraintLayout: '1.0.2',
             support         : "27.0.0",
             firebase        : '11.4.2',
+            playservices    : '9.0.0',
             okHttp          : "3.9.0",
             retrofit        : '2.3.0',
             dagger          : '2.12',
             butterKnife     : '8.8.1',
-            rxJava          : '2.1.5',
+            rxJava          : '2.1.9',
             rxJavaAndroid   : '2.0.1',
-            rxPermissions   : '0.9.4@aar',
+            rxPermissions   : '0.9.5@aar',
             sqlbrite        : '1.1.2',
             traceur         : '1.0.1',
             stetho          : '1.5.0',
@@ -49,8 +50,8 @@ ext {
     rxJava = [
             rxJava          : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
             rxAndroid       : "io.reactivex.rxjava2:rxandroid:$versions.rxJavaAndroid",
-            traceur         : "com.tspoon.traceur:traceur:$versions.traceur",
-            rxRermissions   : "com.tbruyelle.rxpermissions:rxpermissions:$versions.rxPermissions"
+//            traceur         : "com.tspoon.traceur:traceur:$versions.traceur",
+            rxPermission   : "com.tbruyelle.rxpermissions2:rxpermissions:$versions.rxPermissions"
     ]
 
     retrofit = [
@@ -67,10 +68,18 @@ ext {
     ]
 
     googlePlay = [
-            maps             : "com.google.android.gms:play-services-maps:$versions.firebase",
-            crash            : "com.google.firebase:firebase-crash:$versions.firebase",
-            firebaseCore     : "com.google.firebase:firebase-core:$versions.firebase",
-            firebaseMessaging: "com.google.firebase:firebase-messaging:$versions.firebase"
+            maps             : "com.google.android.gms:play-services-maps:$versions.playservices",
+
+            maputils         : "com.google.maps.android:android-maps-utils:0.5+",
+
+            location         : "com.google.android.gms:play-services-location:$versions.playservices",
+
+
+//            crash            : "com.google.firebase:firebase-crash:$versions.firebase",
+//            firebaseCore     : "com.google.firebase:firebase-core:$versions.firebase",
+//            firebaseMessaging: "com.google.firebase:firebase-messaging:$versions.firebase"
+
+
     ]
 
     onlyDebug = [
@@ -121,15 +130,16 @@ ext {
     glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
     glideOkhttp = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
 
+    localify = "com.github.polok.localify:localify:$versions.localify"
+
     googlePlayLibs = googlePlay.values()
     supportLibs = supportDeps.values()
     networkLibs = retrofit.values() + okHttp.values()
     rxJavaLibs = rxJava.values()
-    otherLibs = [butterKnife, timber, dagger, glide, glideOkhttp]
+    otherLibs = [butterKnife, timber, dagger, glide, glideOkhttp,localify]
 
     gson = retrofit.gsonConverter
 
-    localify = "com.github.polok.localify:localify:$versions.localify"
 
 //    debugLibs = onlyDebug.values() + leakCannary
 //    releaseLibs = onlyRelease.values() + leakCannary

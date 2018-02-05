@@ -100,7 +100,6 @@ dependencies {
     implementation supportLibs
     implementation otherLibs
     implementation gson
-    implementation localify
     // APT dependencies
     annotationProcessor annotationProcessorLibs
 
@@ -109,24 +108,9 @@ dependencies {
     testImplementation unitTestLibs
     androidTestImplementation androidTestsLibs
 
-    implementation 'com.google.android.gms:play-services-maps:9.0.0'
-    implementation 'com.google.maps.android:android-maps-utils:0.5+'
-    compile 'com.google.android.gms:play-services-location:9.0.0'
+    implementation googlePlayLibs
 
-
-
-    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
-
-//    implementation ('io.nlopez.smartlocation:library:3.3.3') {
-//        transitive = false
-//    }
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
-
-    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
-
-//    implementation ('com.patloew.rxlocation:rxlocation:1.0.4'){
-//          transitive = false
-//    }
+    implementation rxJavaLibs
 
 
     implementation calligraphy
