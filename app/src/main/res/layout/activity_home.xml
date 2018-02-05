@@ -84,6 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_marker_red"
+        android:layout_marginBottom="48dp"
         android:contentDescription="Current/Selected Location"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/ll_footer"
