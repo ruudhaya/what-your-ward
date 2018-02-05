@@ -104,4 +104,9 @@ public class HomePresenter extends BasePresenter<HomeView> {
     }
 
 
+    public void handleAirplaneModeOnState() {
+
+        getView().showAirplaneModeIsOnError();
+
+    }
 }

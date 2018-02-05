@@ -33,5 +33,7 @@ public interface HomeView extends MvpView {
 
     void closeScreen();
 
+    void showAirplaneModeIsOnError();
+
 //    void hideAnimationAndFinish();
 }
