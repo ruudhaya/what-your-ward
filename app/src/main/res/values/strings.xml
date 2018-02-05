@@ -25,6 +25,10 @@
     <string name="fonts_mons_regular">fonts/Montserrat-Regular.ttf</string>
     <string name="fonts_mons_medium">fonts/Montserrat-Medium.ttf</string>
 
+    <string name="fonts_dosis_medium">fonts/Dosis-Medium.ttf</string>
+    <string name="fonts_dosis_regular">fonts/Dosis-Regular.ttf</string>
+    <string name="fonts_dosis_semi_bold">fonts/Dosis-SemiBold.ttf</string>
+
 
     <string name="map_title_ward">WHAT YOUR WARD?</string>
     <string name="text_ward_name_hint">WARD:\u0020</string>

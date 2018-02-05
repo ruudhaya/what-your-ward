@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    tools:ignore="MissingPrefix"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
@@ -26,7 +27,9 @@
             android:gravity="center"
             android:text="@string/map_title_ward"
             android:textSize="36sp"
-            android:textStyle="bold" />
+            fontPath="@string/fonts_dosis_semi_bold"
+            android:textColor="@color/black"
+            />
 
 
     </LinearLayout>
@@ -122,10 +125,12 @@
             android:background="@color/blue_sky"
             android:gravity="center"
             android:minHeight="0dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
             android:text="Next"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            fontPath="@string/fonts_dosis_semi_bold"/>
     </LinearLayout>
 
 

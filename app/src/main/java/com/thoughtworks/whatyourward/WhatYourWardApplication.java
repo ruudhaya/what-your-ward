@@ -10,6 +10,7 @@ import com.thoughtworks.whatyourward.injection.module.AppModule;
 
 import io.realm.Realm;
 import timber.log.Timber;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class WhatYourWardApplication extends Application {
 
@@ -27,10 +28,10 @@ public class WhatYourWardApplication extends Application {
             Timber.plant(new Timber.DebugTree());
         }
 
-//        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-//                .setDefaultFontPath(Constants.FONT_APP)
-//                .setFontAttrId(R.attr.fontPath)
-//                .build());
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath(Constants.FONT_APP)
+                .setFontAttrId(R.attr.fontPath)
+                .build());
 
         Realm.init(this);
 

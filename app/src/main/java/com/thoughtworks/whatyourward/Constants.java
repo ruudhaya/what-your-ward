@@ -12,7 +12,7 @@ public class Constants {
     public static final String DATABASE_NAME =  "thoughtworks_db";
 
 
-    public static final String FONT_APP = "fonts/Montserrat-Regular.ttf";
+    public static final String FONT_APP = "fonts/Dosis-Medium.ttf";
 
 
 
