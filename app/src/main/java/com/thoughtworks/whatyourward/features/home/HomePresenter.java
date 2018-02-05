@@ -1,5 +1,7 @@
 package com.thoughtworks.whatyourward.features.home;
 
+import android.text.TextUtils;
+
 import com.thoughtworks.whatyourward.data.DataManager;
 import com.thoughtworks.whatyourward.data.model.ward.Ward;
 import com.thoughtworks.whatyourward.features.base.BasePresenter;
@@ -80,6 +82,23 @@ public class HomePresenter extends BasePresenter<HomeView> {
         }else{
 
             getView().showLocationPermissionError();
+        }
+    }
+
+    public void handleWardDetails(String wardNo, ArrayList<Ward> wardList) {
+
+        if(!TextUtils.isEmpty(wardNo)) {
+            for (Ward ward : wardList) {
+
+                if (ward != null && wardNo.equalsIgnoreCase(ward.getWardNo())) {
+
+                    getView().showWardDetailsBottomSheet(ward);
+                }else{
+
+                    getView().showWardDetailsNotFoundError();
+                }
+            }
+
         }
     }
 

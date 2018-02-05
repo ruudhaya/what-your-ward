@@ -104,6 +104,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
     private static final int defaultZoom = 13;
 
+    private static String ATTRIBUTE_KML_NAME = "name";
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -269,14 +271,12 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
             case R.id.btn_next:
 
 
-                Ward ward = getWardDetails();
+                LatLng centerLatLngPosition = getMapCenterPosition();
 
-                if(ward != null) {
+                String wardNo = getWardNum(centerLatLngPosition);
 
-                    homePresenter.showWardDetailsBottomSheet(ward);
-                }else{
-                    Toast.makeText(this, "No ward details found for this area", Toast.LENGTH_SHORT).show();
-                }
+                homePresenter.handleWardDetails(wardNo, mWardArrayList);
+
                 break;
         }
     }
@@ -301,16 +301,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         LinearLayout llWhatsappGroup = view.findViewById(R.id.ll_whatsapp_group);
 
 
-        setText(getString(R.string.text_ward_name_hint) + ward.getWardName(), txtWardName);
-        setText(getString(R.string.text_ward_address_hint) + ward.getWardOfficeAddress(), txtWardAddress);
-        setText(ward.getWardNo(), txtWardId);
-        setText(getString(R.string.text_ward_contact_hint) + ward.getWardOfficePhone(), txtWardMobile);
-        setText(getString(R.string.text_ward_email_hint) + ward.getWardOfficeEmail(), txtWardEmail);
-
-        setText(getString(R.string.text_zone_name_hint) + zoneInfo.getZoneName(), txtZoneName);
-        setText(zoneInfo.getZoneNo(), txtZoneNumber);
-        setText(getString(R.string.text_zone_address_hint)+ zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
-        setText(getString(R.string.text_zone_contact_hint) + zoneInfo.getZonalOfficePhone(), txtZoneMobile);
+        setWardDetailsText(ward, zoneInfo, txtZoneName, txtZoneAddress, txtZoneNumber, txtZoneMobile, txtWardName, txtWardAddress, txtWardId, txtWardMobile, txtWardEmail);
 
         llWhatsappGroup.setOnClickListener(v -> IntentUtil.joinWhatsappGroup(HomeActivity.this, ward.getWardWhatsappGroupLink()));
 
@@ -325,6 +316,18 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         dialog.setContentView(view);
         dialog.show();
 
+    }
+
+    private void setWardDetailsText(Ward ward, ZoneInfo zoneInfo, TextView txtZoneName, TextView txtZoneAddress, TextView txtZoneNumber, TextView txtZoneMobile, TextView txtWardName, TextView txtWardAddress, TextView txtWardId, TextView txtWardMobile, TextView txtWardEmail) {
+        setText(getString(R.string.text_ward_name_hint) + ward.getWardName(), txtWardName);
+        setText(getString(R.string.text_ward_address_hint) + ward.getWardOfficeAddress(), txtWardAddress);
+        setText(ward.getWardNo(), txtWardId);
+        setText(getString(R.string.text_ward_contact_hint) + ward.getWardOfficePhone(), txtWardMobile);
+        setText(getString(R.string.text_ward_email_hint) + ward.getWardOfficeEmail(), txtWardEmail);
+        setText(getString(R.string.text_zone_name_hint) + zoneInfo.getZoneName(), txtZoneName);
+        setText(zoneInfo.getZoneNo(), txtZoneNumber);
+        setText(getString(R.string.text_zone_address_hint)+ zoneInfo.getZonalOfficeAddress(), txtZoneAddress);
+        setText(getString(R.string.text_zone_contact_hint) + zoneInfo.getZonalOfficePhone(), txtZoneMobile);
     }
 
     @Override
@@ -364,8 +367,13 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void showWardDetailsNotFoundError() {
+        Toast.makeText(this, "No ward details found for this area", Toast.LENGTH_SHORT).show();
+    }
 
-    public LatLng getCenterOfMap() {
+
+    private LatLng getMapCenterPosition() {
         if (mGoogleMap != null)
             return mGoogleMap.getCameraPosition().target;
 
@@ -376,7 +384,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     private String getWardNum(LatLng latLng) {
         KmlPlacemark kmlPlacemark = KmlUtil.containsInAnyPolygon(kmlLayer, latLng);
         if (kmlPlacemark != null) {
-            String wardName = kmlPlacemark.getProperty("name");
+            String wardName = kmlPlacemark.getProperty(ATTRIBUTE_KML_NAME);
             String wardNo = ParseUtil.getWardNum(wardName);
             return wardNo;
         }
@@ -384,23 +392,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     }
 
 
-    private Ward getWardDetails() {
-
-        LatLng center = getCenterOfMap();
-        String wardNo = getWardNum(center);
-
-
-        if(!TextUtils.isEmpty(wardNo)) {
-            for (Ward ward : mWardArrayList) {
-
-                if (ward != null && wardNo.equalsIgnoreCase(ward.getWardNo())) {
-                    return ward;
-                }
-            }
-
-        }
-        return null;
-    }
 
 
     private void setText(String text, TextView textView) {

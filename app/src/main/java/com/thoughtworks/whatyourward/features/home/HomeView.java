@@ -23,5 +23,7 @@ public interface HomeView extends MvpView {
 
     void showLocationPermissionError();
 
+    void showWardDetailsNotFoundError();
+
 //    void hideAnimationAndFinish();
 }
