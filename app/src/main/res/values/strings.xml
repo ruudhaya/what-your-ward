@@ -56,5 +56,12 @@
     <string name="btn_next">Next</string>
     <string name="map_confirm_location">CONFIRM YOUR LOCATION, ADJUST IF REQUIRED</string>
 
+    <string name="dialog_location_message">There seems to be something wrong while fetching location</string>
+    <string name="dialog_location_positve_btn">TRY AGAIN</string>
+
+    <string name="dialog_location_negative_btn">CLOSE APP</string>
+
+
+    <string name="dialog_location_neutral_btn">TURN ON GPS</string>
 
 </resources>
