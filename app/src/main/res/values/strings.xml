@@ -21,7 +21,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_cart_list">CartListActivity</string>
 
-    <string name="google_maps_key">AIzaSyDEMzNzxNTiDaTp13ZPqStqZBheXTEQA3I</string>
 
     <string name="fonts_mons_regular">fonts/Montserrat-Regular.ttf</string>
     <string name="fonts_mons_medium">fonts/Montserrat-Medium.ttf</string>

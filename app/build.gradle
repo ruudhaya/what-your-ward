@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 
+def GOOGLE_MAP_API_KEY = '"' + GoogleMapApiKey + '"' ?: "Please add your google api key in gradle.properties"
 android {
     compileSdkVersion 27
     buildToolsVersion '27.0.0'
