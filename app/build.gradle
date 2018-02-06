@@ -103,9 +103,6 @@ dependencies {
     annotationProcessor annotationProcessorLibs
 
 
-    testImplementation unitTestLibs
-    androidTestImplementation androidTestsLibs
-
     implementation googlePlayLibs
 
     implementation rxJavaLibs
