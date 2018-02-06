@@ -100,10 +100,8 @@ dependencies {
     implementation supportLibs
     implementation otherLibs
     implementation gson
-    // APT dependencies
     annotationProcessor annotationProcessorLibs
 
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
     testImplementation unitTestLibs
     androidTestImplementation androidTestsLibs
@@ -111,7 +109,6 @@ dependencies {
     implementation googlePlayLibs
 
     implementation rxJavaLibs
-
 
     implementation calligraphy
 

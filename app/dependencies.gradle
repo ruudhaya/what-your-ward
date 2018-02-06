@@ -42,8 +42,8 @@ ext {
             design           : "com.android.support:design:$versions.support",
             recyclerView     : "com.android.support:recyclerview-v7:$versions.support",
             supportAnnotation: "com.android.support:support-annotations:$versions.support",
-            gridLayout       : "com.android.support:gridlayout-v7:$versions.support"
-//            constraintLayout : "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
+            gridLayout       : "com.android.support:gridlayout-v7:$versions.support",
+            constraintLayout : "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
 
     ]
 
@@ -73,13 +73,6 @@ ext {
             maputils         : "com.google.maps.android:android-maps-utils:0.5+",
 
             location         : "com.google.android.gms:play-services-location:$versions.playservices",
-
-
-//            crash            : "com.google.firebase:firebase-crash:$versions.firebase",
-//            firebaseCore     : "com.google.firebase:firebase-core:$versions.firebase",
-//            firebaseMessaging: "com.google.firebase:firebase-messaging:$versions.firebase"
-
-
     ]
 
     onlyDebug = [
