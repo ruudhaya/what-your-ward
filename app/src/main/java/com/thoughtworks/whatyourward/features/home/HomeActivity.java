@@ -152,6 +152,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), Constants.DEFAULT.MAP_ZOOM));
         mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
 
+        mGoogleMap.setMyLocationEnabled(true);
+
         handler = new Handler();
 
         handler.postDelayed(() -> {
@@ -194,6 +196,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 .findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
+
     }
 
 //    @Override
@@ -369,7 +372,7 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     public void showLocationPermissionErrorDialog() {
 
 
-        Timber.i("Location object is null. Trying to reconnect.");
+        Timber.i("Location object is null.");
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(HomeActivity.this);
 
@@ -379,6 +382,8 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
                 .setCancelable(false)
                 .setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogBox, int id) {
+
+                        Timber.i("Trying to reconnect");
 
                         mGoogleApiClient.connect();
                         dialogBox.dismiss();
