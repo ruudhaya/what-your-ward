@@ -30,8 +30,28 @@ public class SplashScreenPresenter extends BasePresenter<SplashScreenView> {
     }
 
 
-    public void goToNextScreen(){
-        getView().goToNextScreen();
+//    public void goToNextScreen(){
+//        getView().goToNextScreen();
+//    }
+
+
+    public void checkLocationPermission() {
+        getView().onLocationPermission();
+    }
+
+
+    public void handleLocationPermission(boolean isGranted) {
+
+        if(isGranted) {
+            getView().goToNextScreen();
+        }else{
+            getView().showLocationPermissionError();
+        }
+    }
+
+    public void closeScreen(){
+
+        getView().closeScreen();
     }
 
 
