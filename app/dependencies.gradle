@@ -133,9 +133,6 @@ ext {
 
     gson = retrofit.gsonConverter
 
-
-//    debugLibs = onlyDebug.values() + leakCannary
-//    releaseLibs = onlyRelease.values() + leakCannary
     annotationProcessorLibs = [butterKnifeCompiler, daggerCompiler, glideCompiler]
 
     unitTestLibs = unitTest.values() + leakCannary
