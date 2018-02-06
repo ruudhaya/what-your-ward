@@ -6,8 +6,6 @@ import android.content.SharedPreferences;
 
 import dagger.Module;
 import dagger.Provides;
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 import com.github.polok.localify.LocalifyClient;
 import com.thoughtworks.whatyourward.Constants;
@@ -49,18 +47,6 @@ public class AppModule {
         return new LocalifyClient.Builder()
                 .withAssetManager(context.getAssets())
                 .build();
-    }
-
-    @Provides
-    @Singleton
-    Realm providesRealm() {
-        RealmConfiguration config = new RealmConfiguration.Builder()
-                 .name(Constants.DATABASE_NAME)
-                .schemaVersion(1)
-                .deleteRealmIfMigrationNeeded()
-                .build();
-
-        return Realm.getInstance(config);
     }
 
 
