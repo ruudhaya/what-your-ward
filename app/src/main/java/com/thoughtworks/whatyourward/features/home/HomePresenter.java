@@ -56,19 +56,19 @@ public class HomePresenter extends BasePresenter<HomeView> {
     }
 
 
-    public void checkAndHandleLocationPermission() {
+//    public void checkAndHandleLocationPermission() {
+//
+//        getView().onLocationPermission();
+//    }
 
-        getView().onLocationPermission();
-    }
-
-    public void handleLocationPermission(boolean isGranted) {
-
-        if(isGranted) {
-            getView().getCurrentLocation();
-        }else{
-            getView().showLocationPermissionError();
-        }
-    }
+//    public void handleLocationPermission(boolean isGranted) {
+//
+//        if(isGranted) {
+//            getView().getCurrentLocation();
+//        }else{
+//            getView().showLocationPermissionError();
+//        }
+//    }
 
     public void handleWardDetails(String wardNo, ArrayList<Ward> wardList) {
 
@@ -93,6 +93,11 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
     }
 
+    public void getCurrentLocation(){
+
+        getView().getCurrentLocation();
+    }
+
     public void clickNextButton() {
 
         getView().onNextButtonClicked();
@@ -109,4 +114,15 @@ public class HomePresenter extends BasePresenter<HomeView> {
         getView().showAirplaneModeIsOnError();
 
     }
+
+    public void showLocationPermissionErrorDialog(){
+
+        getView().showLocationPermissionErrorDialog();
+    }
+
+    public void showGpsPermissionDialog(){
+
+        getView().showGpsPermissionDialog();
+    }
+
 }

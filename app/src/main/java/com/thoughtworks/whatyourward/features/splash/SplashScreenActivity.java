@@ -1,10 +1,13 @@
 package com.thoughtworks.whatyourward.features.splash;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.thoughtworks.whatyourward.Constants;
 import com.thoughtworks.whatyourward.R;
 import com.thoughtworks.whatyourward.features.base.BaseActivity;
@@ -29,6 +32,8 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
     @BindView(R.id.img_splash)
     ImageView imgSplash;
     private Handler handler;
+
+    private RxPermissions rxPermissions;
 
 
     @Override
@@ -81,7 +86,9 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
 
         ImageUtil.loadImage(this,R.drawable.bg_splash,imgSplash);
 
-        splashScreenPresenter.goToNextScreen();
+//        splashScreenPresenter.goToNextScreen();
+
+        splashScreenPresenter.checkLocationPermission();
 
     }
 
@@ -91,5 +98,38 @@ public class SplashScreenActivity extends BaseActivity implements SplashScreenVi
         handler.removeCallbacksAndMessages(null);
         super.onBackPressed();
     }
+
+
+    @Override
+    public void onLocationPermission() {
+
+        rxPermissions = new RxPermissions(SplashScreenActivity.this); // where this is an Activity instance
+
+        rxPermissions
+                .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+                .subscribe(granted -> {
+
+                    splashScreenPresenter.handleLocationPermission(granted);
+
+
+                });
+    }
+
+    @Override
+    public void showLocationPermissionError() {
+        Toast.makeText(SplashScreenActivity.this,
+                R.string.permission_error_location,
+                Toast.LENGTH_SHORT).show();
+
+
+        splashScreenPresenter.closeScreen();
+    }
+
+    @Override
+    public void closeScreen() {
+
+        finish();
+    }
+
 }
 

@@ -17,11 +17,11 @@ public interface HomeView extends MvpView {
 
     void showWardDetailsBottomSheet(Ward ward);
 
-    void onLocationPermission();
+//    void onLocationPermission();
 
     void getCurrentLocation();
 
-    void showLocationPermissionError();
+    void showLocationPermissionErrorDialog();
 
     void showWardDetailsNotFoundError();
 
@@ -36,4 +36,7 @@ public interface HomeView extends MvpView {
     void showAirplaneModeIsOnError();
 
 //    void hideAnimationAndFinish();
+
+    void showGpsPermissionDialog();
+
 }
