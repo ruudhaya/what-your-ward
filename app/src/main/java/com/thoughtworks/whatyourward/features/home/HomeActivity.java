@@ -382,13 +382,11 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
                 .setNeutralButton(R.string.dialog_location_neutral_btn,
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogBox, int id) {
+                        (dialogBox, id) -> {
 
-                                homePresenter.showGpsPermissionDialog();
+                            homePresenter.showGpsPermissionDialog();
 
-                                dialogBox.dismiss();
-                            }
+                            dialogBox.dismiss();
                         });
 
         AlertDialog alertDialogAndroid = alertDialog.create();

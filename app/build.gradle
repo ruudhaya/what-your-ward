@@ -70,25 +70,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    testOptions {
-        animationsDisabled = true
-        unitTests {
-            includeAndroidResources = true
-            returnDefaultValues = true
-            all {
-                jacoco {
-                    includeNoLocationClasses true
-                }
-                systemProperty 'robolectric.logging.enabled', 'true'
-                systemProperty 'robolectric.logging', 'stdout'
-                // Print test details in the terminal (or CI).
-                testLogging {
-                    events 'passed', 'skipped', 'failed', 'standardOut', 'standardError' // Log out test results to console
-                    exceptionFormat 'full'
-                }
-            }
-        }
-    }
 }
 
 
