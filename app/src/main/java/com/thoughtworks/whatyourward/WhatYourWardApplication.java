@@ -8,7 +8,6 @@ import com.thoughtworks.whatyourward.injection.component.AppComponent;
 import com.thoughtworks.whatyourward.injection.component.DaggerAppComponent;
 import com.thoughtworks.whatyourward.injection.module.AppModule;
 
-import io.realm.Realm;
 import timber.log.Timber;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
@@ -32,9 +31,6 @@ public class WhatYourWardApplication extends Application {
                 .setDefaultFontPath(Constants.FONT_APP)
                 .setFontAttrId(R.attr.fontPath)
                 .build());
-
-        Realm.init(this);
-
 
 
     }

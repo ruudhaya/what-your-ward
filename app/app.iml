@@ -99,6 +99,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/merged-not-compiled-resources" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
@@ -141,7 +142,6 @@
     <orderEntry type="library" name="com.android.support:support-v4-27.0.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-fragment-27.0.0" level="project" />
     <orderEntry type="library" name="uk.co.chrisjenx:calligraphy-2.3.0" level="project" />
-    <orderEntry type="library" name="com.getkeepsafe.relinker:relinker-1.2.2" level="project" />
     <orderEntry type="library" name="com.android.support:appcompat-v7-27.0.0" level="project" />
     <orderEntry type="library" name="com.android.support:design-27.0.0" level="project" />
     <orderEntry type="library" name="com.github.polok.localify:localify-1.0.0" level="project" />
@@ -149,7 +149,6 @@
     <orderEntry type="library" name="com.jakewharton.timber:timber-4.5.1" level="project" />
     <orderEntry type="library" name="javax.inject:javax.inject:1@jar" level="project" />
     <orderEntry type="library" name="com.github.bumptech.glide:okhttp3-integration:4.2.0@jar" level="project" />
-    <orderEntry type="library" name="io.realm:realm-annotations:4.1.0@jar" level="project" />
     <orderEntry type="library" name="com.android.support:recyclerview-v7-27.0.0" level="project" />
     <orderEntry type="library" name="com.github.bumptech.glide:disklrucache:4.2.0@jar" level="project" />
     <orderEntry type="library" name="com.google.code.gson:gson:2.7@jar" level="project" />
@@ -159,8 +158,6 @@
     <orderEntry type="library" name="com.jakewharton:butterknife-8.8.1" level="project" />
     <orderEntry type="library" name="io.reactivex.rxjava2:rxandroid-2.0.1" level="project" />
     <orderEntry type="library" name="org.reactivestreams:reactive-streams:1.0.2@jar" level="project" />
-    <orderEntry type="library" name="com.google.code.findbugs:jsr305:3.0.2@jar" level="project" />
-    <orderEntry type="library" name="io.realm:realm-android-library-4.1.0" level="project" />
     <orderEntry type="library" name="com.google.dagger:dagger:2.12@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-annotations:27.0.0@jar" level="project" />
     <orderEntry type="library" name="com.google.android.gms:play-services-location-9.0.0" level="project" />
