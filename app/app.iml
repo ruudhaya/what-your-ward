@@ -75,7 +75,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/commonTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />

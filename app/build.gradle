@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply from: '../config/quality/quality.gradle'
-apply from: '../config/jacoco.gradle'
 
 
 android {
@@ -18,7 +16,6 @@ android {
         applicationId "com.thoughtworks.whatyourward"
         minSdkVersion 19
         targetSdkVersion 27
-        testInstrumentationRunner "com.thoughtworks.whatyourward.runner.RxAndroidJUnitRunner"
         versionCode 1000
         versionName '0.1.0'
 
@@ -30,15 +27,6 @@ android {
         }
     }
 
-    sourceSets {
-        def commonTestDir = 'src/commonTest/java'
-        test {
-            java.srcDir commonTestDir
-        }
-        androidTest {
-            java.srcDir commonTestDir
-        }
-    }
 
     lintOptions {
         textOutput "stdout"
