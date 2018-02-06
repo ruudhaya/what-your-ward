@@ -88,9 +88,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
     private KmlLayer kmlLayer;
 
 
-//    private RxPermissions rxPermissions;
-
-
     private SupportMapFragment mapFragment;
 
     private GoogleMap mGoogleMap;
@@ -198,21 +195,6 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
         mapFragment.getMapAsync(this);
 
     }
-
-//    @Override
-//    public void onLocationPermission() {
-//
-//        rxPermissions = new RxPermissions(HomeActivity.this); // where this is an Activity instance
-//
-//        rxPermissions
-//                .request(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
-//                .subscribe(granted -> {
-//
-//                    homePresenter.handleLocationPermission(granted);
-//
-//
-//                });
-//    }
 
 
     @Override
@@ -378,32 +360,28 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
 
         alertDialog
-                .setMessage("There seems to be something wrong while fetching location")
+                .setMessage(R.string.dialog_location_message)
                 .setCancelable(false)
-                .setPositiveButton("TRY AGAIN", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogBox, int id) {
+                .setPositiveButton(R.string.dialog_location_positve_btn, (dialogBox, id) -> {
 
-                        Timber.i("Trying to reconnect");
+                    Timber.i("Trying to reconnect");
 
-                        mGoogleApiClient.connect();
-                        dialogBox.dismiss();
+                    mGoogleApiClient.connect();
+                    dialogBox.dismiss();
 
-                    }
                 })
 
-                .setNegativeButton("CLOSE",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogBox, int id) {
+                .setNegativeButton(R.string.dialog_location_negative_btn,
+                        (dialogBox, id) -> {
 
-                                homePresenter.stopLoadingAnimation();
+                            homePresenter.stopLoadingAnimation();
 
-                                homePresenter.closeScreen();
-                                dialogBox.dismiss();
-                            }
+                            homePresenter.closeScreen();
+                            dialogBox.dismiss();
                         })
 
 
-                .setNeutralButton("TURN ON GPS",
+                .setNeutralButton(R.string.dialog_location_neutral_btn,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialogBox, int id) {
 
@@ -415,20 +393,9 @@ public class HomeActivity extends BaseActivity implements HomeView, OnMapReadyCa
 
         AlertDialog alertDialogAndroid = alertDialog.create();
         alertDialogAndroid.show();
-//            initGoogleApiClient();
 
     }
 
-//    @Override
-//    public void showLocationPermissionError() {
-//        Toast.makeText(HomeActivity.this,
-//                R.string.permission_error_location,
-//                Toast.LENGTH_SHORT).show();
-//
-//        homePresenter.stopLoadingAnimation();
-//
-//        homePresenter.closeScreen();
-//    }
 
     @Override
     public void showWardDetailsNotFoundError() {
