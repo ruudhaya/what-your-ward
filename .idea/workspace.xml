@@ -13,11 +13,6 @@
     <list default="true" id="dcdfa630-20a9-457e-a8d7-96d2d542250a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomePresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomePresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenView.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,34 +36,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="343" column="16" lean-forward="false" selection-start-line="343" selection-start-column="16" selection-end-line="343" selection-end-column="16" />
+            <state relative-caret-position="-81">
+              <caret line="385" column="53" lean-forward="false" selection-start-line="385" selection-start-column="53" selection-end-line="385" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8056#8095#0" expanded="true" />
-                <element signature="e#8147#8189#0" expanded="true" />
-                <element signature="e#8303#8342#0" expanded="true" />
-                <element signature="e#8456#8498#0" expanded="true" />
-                <element signature="e#9614#9638#0" expanded="true" />
-                <element signature="e#9994#10016#0" expanded="true" />
-                <element signature="e#12805#12835#0" expanded="true" />
-                <element signature="e#12978#13009#0" expanded="true" />
-                <element signature="e#13197#13226#0" expanded="true" />
-                <element signature="e#13778#13812#0" expanded="true" />
-                <element signature="e#15411#15412#0" expanded="true" />
-                <element signature="e#15470#15471#0" expanded="true" />
+                <element signature="e#8105#8144#0" expanded="true" />
+                <element signature="e#8196#8238#0" expanded="true" />
+                <element signature="e#8352#8391#0" expanded="true" />
+                <element signature="e#8505#8547#0" expanded="true" />
+                <element signature="e#9663#9687#0" expanded="true" />
+                <element signature="e#10043#10065#0" expanded="true" />
+                <element signature="e#12891#12921#0" expanded="true" />
+                <element signature="e#13064#13095#0" expanded="true" />
+                <element signature="e#13283#13312#0" expanded="true" />
+                <element signature="e#13864#13898#0" expanded="true" />
+                <element signature="e#15497#15498#0" expanded="true" />
+                <element signature="e#15556#15557#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SplashScreenActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SplashScreenActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
+            <state relative-caret-position="1544">
               <caret line="128" column="10" lean-forward="false" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
               <folding>
                 <element signature="e#2853#2887#0" expanded="true" />
@@ -169,8 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>googlePlay</find>
-      <find>otherLibs</find>
       <find>supportLibs</find>
       <find>supportDeps</find>
       <find>0.9.5</find>
@@ -199,6 +192,8 @@
       <find>checkAndHandleLocationPermission</find>
       <find>handleGpsPermissionState</find>
       <find>handleG</find>
+      <find>google</find>
+      <find>googleMa</find>
     </findStrings>
     <replaceStrings>
       <replace>Ward</replace>
@@ -2701,7 +2696,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517891651089" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517893057193" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2749,7 +2744,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517891651089" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517893057193" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2932,7 +2927,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517891651090" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1517893057194" />
       </method>
     </configuration>
     <list size="1">
@@ -2960,6 +2955,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="dcdfa630-20a9-457e-a8d7-96d2d542250a" name="Default" comment="" />
@@ -2972,7 +2970,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2985,8 +2982,8 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31616595" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27864897" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19420989" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4221954" sideWeight="0.49427754" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19420989" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4221954" sideWeight="0.49427754" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38826814" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
@@ -3080,31 +3077,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>580</line>
+          <line>585</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>573</line>
+          <line>578</line>
           <properties />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>589</line>
+          <line>594</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>587</line>
+          <line>592</line>
           <properties />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java</url>
-          <line>183</line>
+          <line>185</line>
           <properties />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
@@ -3529,34 +3526,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="343" column="16" lean-forward="false" selection-start-line="343" selection-start-column="16" selection-end-line="343" selection-end-column="16" />
+        <state relative-caret-position="1544">
+          <caret line="128" column="10" lean-forward="false" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8056#8095#0" expanded="true" />
-            <element signature="e#8147#8189#0" expanded="true" />
-            <element signature="e#8303#8342#0" expanded="true" />
-            <element signature="e#8456#8498#0" expanded="true" />
-            <element signature="e#9614#9638#0" expanded="true" />
-            <element signature="e#9994#10016#0" expanded="true" />
-            <element signature="e#12805#12835#0" expanded="true" />
-            <element signature="e#12978#13009#0" expanded="true" />
-            <element signature="e#13197#13226#0" expanded="true" />
-            <element signature="e#13778#13812#0" expanded="true" />
-            <element signature="e#15411#15412#0" expanded="true" />
-            <element signature="e#15470#15471#0" expanded="true" />
+            <element signature="e#2853#2887#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/splash/SplashScreenActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/thoughtworks/whatyourward/features/home/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="128" column="10" lean-forward="false" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
+        <state relative-caret-position="-81">
+          <caret line="385" column="53" lean-forward="false" selection-start-line="385" selection-start-column="53" selection-end-line="385" selection-end-column="53" />
           <folding>
-            <element signature="e#2853#2887#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#8105#8144#0" expanded="true" />
+            <element signature="e#8196#8238#0" expanded="true" />
+            <element signature="e#8352#8391#0" expanded="true" />
+            <element signature="e#8505#8547#0" expanded="true" />
+            <element signature="e#9663#9687#0" expanded="true" />
+            <element signature="e#10043#10065#0" expanded="true" />
+            <element signature="e#12891#12921#0" expanded="true" />
+            <element signature="e#13064#13095#0" expanded="true" />
+            <element signature="e#13283#13312#0" expanded="true" />
+            <element signature="e#13864#13898#0" expanded="true" />
+            <element signature="e#15497#15498#0" expanded="true" />
+            <element signature="e#15556#15557#0" expanded="true" />
           </folding>
         </state>
       </provider>
